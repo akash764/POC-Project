@@ -179,19 +179,6 @@
     <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
     <fields>
-        <fullName>Booking__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Linked booking agreement.</description>
-        <label>Booking</label>
-        <referenceTo>Booking__c</referenceTo>
-        <relationshipLabel>Handovers</relationshipLabel>
-        <relationshipName>Handovers</relationshipName>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Snag_Status__c</fullName>
         <description>Snagging status: Inspection Scheduled, Snag List Generated, Rectification In-Progress, Cleared / Zero Defects.</description>
         <label>Snagging Status</label>
