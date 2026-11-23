@@ -1,0 +1,42 @@
+<template>
+    <div class="un-contact-card">
+        <h3 class="un-contact-title">Experience UrbanNest</h3>
+        <p class="un-contact-intro">
+            Connect directly with our dedicated real estate advisors or schedule a guided walkthrough of our show residences.
+        </p>
+
+        <div class="un-info-list">
+            <div class="un-info-block">
+                <span class="un-info-icon">📍</span>
+                <div>
+                    <h5 class="un-info-label">Corporate Office</h5>
+                    <p class="un-info-value">{displayAddress}</p>
+                </div>
+            </div>
+
+            <div class="un-info-block">
+                <span class="un-info-icon">📞</span>
+                <div>
+                    <h5 class="un-info-label">Direct Lines</h5>
+                    <p class="un-info-value"><a href={telHref} class="un-contact-link">{displayPhone}</a></p>
+                </div>
+            </div>
+
+            <div class="un-info-block">
+                <span class="un-info-icon">✉️</span>
+                <div>
+                    <h5 class="un-info-label">Email Enquiries</h5>
+                    <p class="un-info-value"><a href={mailToHref} class="un-contact-link">{displayEmail}</a></p>
+                </div>
+            </div>
+
+            <div class="un-info-block">
+                <span class="un-info-icon">🕒</span>
+                <div>
+                    <h5 class="un-info-label">Visitor Hours</h5>
+                    <p class="un-info-value">{displayVisitorHours}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

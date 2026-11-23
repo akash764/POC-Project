@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Properties",
+  "contentBody" : {
+    "activeViewId" : "Properties",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-properties",
+    "urlPrefix" : "properties"
+  },
+  "urlName" : "properties"
+}

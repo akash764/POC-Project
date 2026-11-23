@@ -1,0 +1,113 @@
+<template>
+    <div class="un-home-page">
+        <!-- 1. Hero Banner with Visual Trust Badges & Floating Location Search -->
+        <c-un-hero-banner
+            title="Discover Spaces. Create Your Story."
+            subtitle="Premium residential, commercial and luxury developments across prime urban corridors."
+            primary-action-label="Explore Our Projects"
+            onprimaryaction={handleNavigateProperties}
+            onsecondaryaction={handleOpenEnquiry}>
+            <c-un-location-search onsearch={handleLocationSearch}></c-un-location-search>
+        </c-un-hero-banner>
+
+        <!-- 2. Featured Developments Section (Matching exact mockup layout) -->
+        <section class="un-section un-featured-section" id="featured-projects">
+            <div class="un-content-container">
+                <div class="un-featured-header-row">
+                    <div>
+                        <div class="un-eyebrow-row">
+                            <span class="un-eyebrow-line"></span>
+                            <span class="un-eyebrow-text">FEATURED DEVELOPMENTS</span>
+                            <span class="un-eyebrow-line"></span>
+                        </div>
+                        <h2 class="un-featured-title">Exceptional Properties. Unmatched Lifestyle.</h2>
+                    </div>
+                    <div class="un-featured-counter">
+                        {displayCountText}
+                    </div>
+                </div>
+
+                <c-un-project-list
+                    projects={featuredProjects}
+                    is-loading={isLoadingProjects}
+                    has-error={hasProjectError}
+                    error-message={projectErrorMessage}
+                    onselectproject={handleViewProjectDetails}
+                    onenquireproject={handleProjectEnquire}
+                    onretry={loadFeaturedProjects}>
+                </c-un-project-list>
+
+                <div class="un-center-action">
+                    <button class="un-btn-view-all" onclick={handleNavigateProperties}>
+                        View All Properties &rarr;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Visual Pillars Showcase (Why Choose UrbanNest - Clean, uncluttered) -->
+        <section class="un-section un-why-section">
+            <div class="un-content-container">
+                <div class="un-center-heading">
+                    <span class="un-gold-eyebrow">THE URBANNEST STANDARD</span>
+                    <h2 class="un-section-h2">Engineered for Distinction &amp; Trust</h2>
+                    <p class="un-section-p">Setting benchmark standards in design innovation, transparent delivery, and sustainable luxury.</p>
+                </div>
+
+                <div class="un-pillars-grid">
+                    <div class="un-pillar-card">
+                        <div class="un-pillar-img-box">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Architectural Mastery" class="un-pillar-photo" loading="lazy" />
+                        </div>
+                        <div class="un-pillar-text">
+                            <span class="un-pillar-badge">Design</span>
+                            <h4 class="un-pillar-title">Architectural Mastery</h4>
+                            <p class="un-pillar-desc">
+                                Optimal Vastu orientations, acoustic privacy, and panoramic cantilever glass balconies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="un-pillar-card">
+                        <div class="un-pillar-img-box">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Green Living" class="un-pillar-photo" loading="lazy" />
+                        </div>
+                        <div class="un-pillar-text">
+                            <span class="un-pillar-badge gold">Eco-Friendly</span>
+                            <h4 class="un-pillar-title">IGBC Green Certified</h4>
+                            <p class="un-pillar-desc">
+                                Solar-powered common amenities, rainwater harvesting, and zero-discharge water treatment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="un-pillar-card">
+                        <div class="un-pillar-img-box">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="100% RERA" class="un-pillar-photo" loading="lazy" />
+                        </div>
+                        <div class="un-pillar-text">
+                            <span class="un-pillar-badge navy">Integrity</span>
+                            <h4 class="un-pillar-title">100% RERA Compliant</h4>
+                            <p class="un-pillar-desc">
+                                Complete documentation clarity, third-party structural testing, and zero hidden escalations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. What Our Valuable Customers Say (Video Testimonials) -->
+        <c-un-video-testimonials></c-un-video-testimonials>
+
+        <!-- 5. Quick Consultation Form -->
+        <section class="un-section un-cta-section">
+            <div class="un-content-container-narrow">
+                <c-un-enquiry-form
+                    form-title="Begin Your Real Estate Journey"
+                    form-subtitle="Schedule a private consultation and site tour with our senior property advisors.">
+                </c-un-enquiry-form>
+            </div>
+        </section>
+    </div>
+</template>

@@ -1,0 +1,63 @@
+.path-card {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #E5E7EB;
+    overflow: hidden;
+}
+
+.path-action-pill {
+    border-radius: 18px !important;
+    padding: 0 18px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    background-color: #0176D3 !important;
+    border-color: #0176D3 !important;
+    white-space: nowrap !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.path-action-pill:hover:not(:disabled) {
+    background-color: #014486 !important;
+    border-color: #014486 !important;
+    box-shadow: 0 2px 4px rgba(1, 68, 134, 0.25);
+}
+
+.path-action-pill:disabled {
+    background-color: #C9C7C5 !important;
+    border-color: #C9C7C5 !important;
+    cursor: not-allowed;
+}
+
+.slds-path__trigger-button {
+    border-radius: 50% !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #DDDBDA !important;
+    background: #FFFFFF !important;
+}
+
+.slds-modal__container {
+    max-width: 1180px !important;
+    width: 92% !important;
+    height: auto !important;
+    max-height: 90vh !important;
+    margin: auto !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-flow-content {
+    min-height: 520px;
+    max-height: 75vh;
+    overflow-y: auto !important;
+    background-color: #FFFFFF;
+}

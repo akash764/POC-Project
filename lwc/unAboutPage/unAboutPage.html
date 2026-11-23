@@ -1,0 +1,114 @@
+<template>
+    <div class="un-about-page">
+        <!-- Hero Banner -->
+        <c-un-hero-banner
+            title={heroTitle}
+            subtitle={heroSubtitle}
+            badge-text="THE URBANNEST LEGACY"
+            height="medium"
+            primary-action-label="View Projects"
+            secondary-action-label="Contact Leadership"
+            onprimaryaction={handleNavigateProjects}
+            onsecondaryaction={handleNavigateContact}>
+        </c-un-hero-banner>
+
+        <!-- Company Narrative & Heritage -->
+        <section class="un-section un-about-intro">
+            <div class="un-content-container">
+                <div class="un-narrative-grid">
+                    <div class="un-narrative-text">
+                        <c-un-section-heading
+                            eyebrow="Our Story"
+                            title={companyHeading}
+                            align="left">
+                        </c-un-section-heading>
+                        <p class="un-narrative-paragraph">
+                            Founded with a mission to transform urban living spaces into enduring architectural landmarks, UrbanNest has consistently established benchmark standards across residential communities in South India.
+                        </p>
+                        <p class="un-narrative-paragraph">
+                            Every UrbanNest development is an intersection of thoughtful spatial design, vastu integrity, zero-wastage carpet efficiencies, and structural excellence. We believe a home is a generational asset that should appreciate in value and elevate daily well-being.
+                        </p>
+                    </div>
+
+                    <div class="un-heritage-card">
+                        <div class="un-heritage-badge">🏛️ EST. 2011</div>
+                        <h4 class="un-heritage-title">Core Principles</h4>
+                        <ul class="un-principles-list">
+                            <li><strong>Uncompromising Quality:</strong> Stringent multi-tier material batch testing.</li>
+                            <li><strong>100% Transparency:</strong> Clear title deeds, zero carpet area ambiguities.</li>
+                            <li><strong>Environmental Stewardship:</strong> IGBC green-rated energy conservation.</li>
+                            <li><strong>Punctual Delivery:</strong> Disciplined milestone execution and handover schedules.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Cards -->
+        <section class="un-section un-mv-section">
+            <div class="un-content-container">
+                <div class="un-mv-grid">
+                    <div class="un-mv-card">
+                        <span class="un-mv-icon">🎯</span>
+                        <h3 class="un-mv-title">Our Mission</h3>
+                        <p class="un-mv-desc">
+                            To engineer sustainable, technologically advanced, and aesthetically inspiring residential landmarks that enrich community living, exceed homeowner expectations, and endure for generations.
+                        </p>
+                    </div>
+
+                    <div class="un-mv-card">
+                        <span class="un-mv-icon">👁️</span>
+                        <h3 class="un-mv-title">Our Vision</h3>
+                        <p class="un-mv-desc">
+                            To be South India's most respected and trusted real estate brand, recognized for uncompromising design integrity, human-centric architecture, and an unblemished on-time delivery record.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Achievements & Statistics -->
+        <section class="un-section-tight">
+            <div class="un-content-container">
+                <c-un-statistics></c-un-statistics>
+            </div>
+        </section>
+
+        <!-- Quality & Engineering Standards -->
+        <section class="un-section un-quality-section">
+            <div class="un-content-container">
+                <c-un-section-heading
+                    eyebrow="Engineering Rigor"
+                    title="Our Quality Guarantees"
+                    subtitle="Every square foot built at UrbanNest undergoes a documented 120-point quality audit prior to key handover.">
+                </c-un-section-heading>
+
+                <div class="un-quality-grid">
+                    <div class="un-quality-box">
+                        <span class="un-q-badge">01</span>
+                        <h4 class="un-q-title">Seismic Resistance</h4>
+                        <p class="un-q-desc">Zone III engineered RCC framed structures with premium Fe550D TMT reinforcement.</p>
+                    </div>
+
+                    <div class="un-quality-box">
+                        <span class="un-q-badge">02</span>
+                        <h4 class="un-q-title">Acoustic Privacy</h4>
+                        <p class="un-q-desc">Acoustic insulated solid block masonry ensuring whisper-quiet privacy in every residence.</p>
+                    </div>
+
+                    <div class="un-quality-box">
+                        <span class="un-q-badge">03</span>
+                        <h4 class="un-q-title">Zero Water Wastage</h4>
+                        <p class="un-q-desc">State-of-the-art multi-stage STPs and advanced rainwater recharge shafts.</p>
+                    </div>
+
+                    <div class="un-quality-box">
+                        <span class="un-q-badge">04</span>
+                        <h4 class="un-q-title">Smart Infrastructure</h4>
+                        <p class="un-q-desc">High-speed FTTH, biometric security, 100% common area power backup, and EV charging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>

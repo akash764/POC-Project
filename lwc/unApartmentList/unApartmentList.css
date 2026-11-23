@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.un-apt-list-wrapper {
+    width: 100%;
+}
+
+.un-apt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}

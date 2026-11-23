@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Lead_Details</name>
+        <label>Assign Lead Details</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>out_LeadDetails</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>tt_LeadDetails</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Lead_Not_Found</name>
+        <label>Assign Lead Not Found</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>out_LeadDetails</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Lead record was found for the provided Lead ID. Please verify the ID and try again.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Lead_Found</name>
+        <label>Check Lead Found</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Lead_Not_Found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Lead Not Found.</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Lead_Details.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Lead_Details</targetReference>
+            </connector>
+            <label>Lead Found</label>
+        </rules>
+    </decisions>
+    <description>Retrieves Lead information based on the Lead ID provided by the Agentforce agent.</description>
+    <ends>
+        <name>END_ELEMENT_1</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
+    <environments>Default</environments>
+    <interviewLabel>UN Get Lead Details {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>UN Get Lead Details</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Lead_Details</name>
+        <label>Get Lead Details</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Lead_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>in_LeadId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Lead_Details</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>tt_LeadDetails</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Lead Name: {!Get_Lead_Details.Name}
+Company: {!Get_Lead_Details.Company}
+Email: {!Get_Lead_Details.Email}
+Phone: {!Get_Lead_Details.Phone}
+Status: {!Get_Lead_Details.Status}
+Lead Source: {!Get_Lead_Details.LeadSource}
+Next Follow-up Date: {!Get_Lead_Details.Next_follow_up_Date__c}</text>
+    </textTemplates>
+    <variables>
+        <name>in_LeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>out_LeadDetails</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

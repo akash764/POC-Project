@@ -1,0 +1,77 @@
+<template>
+    <div class={bannerClass} onmouseenter={handleMouseEnter} onmouseleave={handleMouseLeave}>
+        <!-- Layered Background Slides with Smooth Ken Burns Cross-Fade -->
+        <div class="un-hero-bg-wrapper">
+            <template for:each={slideItems} for:item="slide">
+                <div
+                    key={slide.id}
+                    class={slide.bgClass}
+                    style={slide.style}
+                    aria-hidden={slide.ariaHidden}>
+                </div>
+            </template>
+            <!-- Luxury Dark Gradient Legibility Overlay -->
+            <div class="un-hero-overlay"></div>
+        </div>
+
+        <div class="un-hero-inner">
+            <div class="un-hero-content">
+                <!-- Visual Trust Badges & Active Portfolio Pillar -->
+                <div class="un-hero-pill-row">
+                    <span class="un-hero-pill un-hero-pill-category">
+                        <span class="un-pill-icon">{currentSlide.icon}</span> {currentSlide.category}
+                    </span>
+                    <span class="un-hero-pill">
+                        <span class="un-pill-icon">✔</span> 100% RERA Approved
+                    </span>
+                    <span class="un-hero-pill">
+                        <span class="un-pill-icon">🌿</span> IGBC Gold Certified
+                    </span>
+                    <span class="un-hero-pill">
+                        <span class="un-pill-icon">🤝</span> 35+ Years of Trust
+                    </span>
+                </div>
+
+                <!-- Title & Subtitle with Luxury Typography -->
+                <h1 class="un-hero-title">{displayTitle}</h1>
+                <p class="un-hero-subtitle">{displaySubtitle}</p>
+
+                <!-- Actions -->
+                <div class="un-hero-actions">
+                    <template if:true={primaryActionLabel}>
+                        <button class="un-btn-hero-primary" onclick={handlePrimaryAction}>
+                            <span>{primaryActionLabel}</span>
+                            <span class="un-btn-arrow">&rarr;</span>
+                        </button>
+                    </template>
+                    <template if:true={secondaryActionLabel}>
+                        <button class="un-btn-hero-secondary" onclick={handleSecondaryAction}>
+                            {secondaryActionLabel}
+                        </button>
+                    </template>
+                </div>
+
+                <!-- Interactive 3-Line Carousel Indicators -->
+                <div class="un-hero-dots" role="tablist" aria-label="Hero Carousel Slide Indicators">
+                    <template for:each={dotIndicators} for:item="dot">
+                        <button
+                            key={dot.index}
+                            class={dot.cssClass}
+                            onclick={handleDotClick}
+                            data-index={dot.index}
+                            role="tab"
+                            aria-selected={dot.isActive}
+                            aria-label={dot.ariaLabel}
+                            title={dot.title}>
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Slotted Location Search -->
+            <div class="un-hero-slot">
+                <slot></slot>
+            </div>
+        </div>
+    </div>
+</template>

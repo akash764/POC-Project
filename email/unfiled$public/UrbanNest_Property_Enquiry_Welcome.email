@@ -1,0 +1,57 @@
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+       bgcolor="#f3f0ea" style="font-family:Arial,sans-serif;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+             bgcolor="#ffffff" style="max-width:600px;border:1px solid #e5dccb;">
+        <tr>
+          <td bgcolor="#d8aa45" height="5" style="font-size:1px;line-height:5px;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">
+            <img src="https://ajsd9--devsandbox.sandbox.my.site.com/UrbanNest/sfsites/c/resource/1794909280000/UrbenNest_Banner"
+                 alt="UrbanNest Real Estate logo and apartment residences"
+                 width="600"
+                 style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+          </td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#f7f2e8" style="padding:6px 14px;color:#534b3d;font-size:11px;">
+            Property image for illustration
+          </td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#0c2237" style="padding:28px 24px;color:#ffffff;">
+            <h1 style="margin:0;font-size:28px;line-height:1.2;">
+              We’ve received your property enquiry
+            </h1>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:28px 26px;color:#26384a;font-size:16px;line-height:1.6;">
+            <p style="margin:0 0 12px;">Hi {!Lead.FirstName}{!Lead.LastName},</p>
+
+            <p style="margin:0 0 16px;">
+              Thank you for your interest in UrbanNest. Our team will contact you
+              <strong>within 24 hours</strong> to discuss your requirements and answer your questions.
+            </p>
+
+            <p style="margin:0 0 20px;">
+              If you’d like to visit a property, we can also help you arrange a site visit.
+            </p>
+
+            <p style="margin:0;">
+              Best regards,<br>
+              <strong>The UrbanNest Team</strong>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor="#0c2237" style="padding:16px 26px;color:#e4ebf1;font-size:12px;line-height:1.5;">
+            You received this email because you submitted a property enquiry on the UrbanNest website.
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

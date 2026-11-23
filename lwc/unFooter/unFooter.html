@@ -1,0 +1,87 @@
+<template>
+    <footer class="un-footer">
+        <div class="un-footer-top">
+            <div class="un-footer-grid">
+                <!-- Col 1: Brand Info -->
+                <div class="un-footer-col">
+                    <div class="un-footer-logo">
+                        <div class="un-footer-logo-badge">
+                            <img src={logoUrl} alt="UrbanNest Real Estate" class="un-footer-logo-img" onerror={handleLogoError} />
+                        </div>
+                        <div class="un-brand-text">
+                            <div class="un-brand-title">
+                                <span class="un-brand-urban">Urban</span><span class="un-brand-nest">Nest</span>
+                            </div>
+                            <div class="un-brand-tagline">
+                                <span class="un-tagline-line"></span>
+                                <span class="un-tagline-text">REAL ESTATE</span>
+                                <span class="un-tagline-line"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="un-footer-tagline">
+                        Crafting timeless luxury residences, private gated villa enclaves, and premier corporate landmarks across South India's prime economic corridors.
+                    </p>
+                    <div class="un-social-links">
+                        <span class="un-social-badge" title="Facebook">FB</span>
+                        <span class="un-social-badge" title="Instagram">IG</span>
+                        <span class="un-social-badge" title="LinkedIn">IN</span>
+                        <span class="un-social-badge" title="YouTube">YT</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Portfolio Categories -->
+                <div class="un-footer-col">
+                    <h4 class="un-footer-heading">Portfolio</h4>
+                    <ul class="un-footer-links">
+                        <li><a href="./properties?type=Residential_Apartment">Luxury Apartments</a></li>
+                        <li><a href="./properties?type=Residential_Villa">Gated Villa Estates</a></li>
+                        <li><a href="./properties?type=Commercial">Commercial &amp; Retail</a></li>
+                        <li><a href="./properties">All Developments</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Key Cities -->
+                <div class="un-footer-col">
+                    <h4 class="un-footer-heading">Destinations</h4>
+                    <ul class="un-footer-links">
+                        <li><a href="./properties?city=Chennai">Chennai (OMR &amp; ECR)</a></li>
+                        <li><a href="./properties?city=Bengaluru">Bengaluru (Whitefield)</a></li>
+                        <li><a href="./properties?city=Hyderabad">Hyderabad (HITEC City)</a></li>
+                        <li><a href="./properties?city=Coimbatore">Coimbatore</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Corporate Office -->
+                <div class="un-footer-col">
+                    <h4 class="un-footer-heading">Corporate Office</h4>
+                    <address class="un-footer-contact">
+                        <p class="un-contact-item">
+                            <span class="un-contact-icon">📍</span>
+                            <span>{displayAddress}</span>
+                        </p>
+                        <p class="un-contact-item">
+                            <span class="un-contact-icon">📞</span>
+                            <a href={telHref}>{displayPhone}</a>
+                        </p>
+                        <p class="un-contact-item">
+                            <span class="un-contact-icon">✉️</span>
+                            <a href={mailToHref}>{displayEmail}</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+        </div>
+
+        <div class="un-footer-bottom">
+            <div class="un-footer-bottom-inner">
+                <p>&copy; 2026 UrbanNest Real Estate Ltd. All rights reserved. RERA Registered Developer.</p>
+                <div class="un-legal-links">
+                    <a href="./privacy">Privacy Policy</a>
+                    <a href="./terms">Terms of Service</a>
+                    <a href="./rera">RERA Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>

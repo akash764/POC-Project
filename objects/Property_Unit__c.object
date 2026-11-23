@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Property_Unit_Record_Page1</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Property_Unit_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents an individual residential flat, luxury villa, or commercial inventory space.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Property Unit</label>
+    <nameField>
+        <label>Unit Identifier</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Property Units</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Phase__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Unit_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BHK__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Floor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Carpet_Area__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Possession_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>BHK__c</fullName>
+        <description>Bedroom configuration (applicable to residential apartments and villas).</description>
+        <label>BHK</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 BHK</fullName>
+                    <default>false</default>
+                    <label>1 BHK</label>
+                </value>
+                <value>
+                    <fullName>2 BHK</fullName>
+                    <default>false</default>
+                    <label>2 BHK</label>
+                </value>
+                <value>
+                    <fullName>3 BHK</fullName>
+                    <default>false</default>
+                    <label>3 BHK</label>
+                </value>
+                <value>
+                    <fullName>4 BHK</fullName>
+                    <default>false</default>
+                    <label>4 BHK</label>
+                </value>
+                <value>
+                    <fullName>5 BHK</fullName>
+                    <default>false</default>
+                    <label>5 BHK</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Floor__c</fullName>
+        <description>Floor level (e.g. 0 for Ground, 14 for High-rise flat, or G+1 for Villa level).</description>
+        <externalId>false</externalId>
+        <label>Floor</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phase__c</fullName>
+        <description>Parent Phase, Tower, Enclave, or Wing.</description>
+        <label>Phase</label>
+        <referenceTo>Phase__c</referenceTo>
+        <relationshipLabel>Property Units</relationshipLabel>
+        <relationshipName>Property_Units</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <description>Total pricing or starting price for this property unit.</description>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Facing__c</fullName>
+        <description>Vastu/directional orientation.</description>
+        <label>Facing</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>North</fullName>
+                    <default>false</default>
+                    <label>North</label>
+                </value>
+                <value>
+                    <fullName>East</fullName>
+                    <default>true</default>
+                    <label>East</label>
+                </value>
+                <value>
+                    <fullName>South</fullName>
+                    <default>false</default>
+                    <label>South</label>
+                </value>
+                <value>
+                    <fullName>West</fullName>
+                    <default>false</default>
+                    <label>West</label>
+                </value>
+                <value>
+                    <fullName>North-East</fullName>
+                    <default>false</default>
+                    <label>North-East</label>
+                </value>
+                <value>
+                    <fullName>North-West</fullName>
+                    <default>false</default>
+                    <label>North-West</label>
+                </value>
+                <value>
+                    <fullName>South-East</fullName>
+                    <default>false</default>
+                    <label>South-East</label>
+                </value>
+                <value>
+                    <fullName>South-West</fullName>
+                    <default>false</default>
+                    <label>South-West</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Inventory lifecycle state. Supports all 5 standard lifecycle statuses.</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Available</fullName>
+                    <default>false</default>
+                    <label>Available</label>
+                </value>
+                <value>
+                    <fullName>Under Offer</fullName>
+                    <default>false</default>
+                    <label>Under Offer</label>
+                </value>
+                <value>
+                    <fullName>Reserved</fullName>
+                    <default>false</default>
+                    <label>Reserved</label>
+                </value>
+                <value>
+                    <fullName>Sold</fullName>
+                    <default>false</default>
+                    <label>Sold</label>
+                </value>
+                <value>
+                    <fullName>Occupied</fullName>
+                    <default>false</default>
+                    <label>Occupied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <description>Reference to the parent Project through Phase.</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Phase__r.Project__c)</formula>
+        <label>Project Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bathrooms__c</fullName>
+        <description>Number of bathrooms/restrooms.</description>
+        <externalId>false</externalId>
+        <label>Bathrooms</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plot_Area__c</fullName>
+        <description>Total land/plot parcel area in square feet (specifically for Villas and Plotted developments).</description>
+        <externalId>false</externalId>
+        <label>Plot Area (Sq.Ft)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_Type__c</fullName>
+        <description>Specific inventory configuration category across apartments, villas, and commercial spaces.</description>
+        <label>Unit Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 BHK Apartment</fullName>
+                    <default>false</default>
+                    <label>1 BHK Apartment</label>
+                </value>
+                <value>
+                    <fullName>2 BHK Luxury Flat</fullName>
+                    <default>true</default>
+                    <label>2 BHK Luxury Flat</label>
+                </value>
+                <value>
+                    <fullName>3 BHK Premium Flat</fullName>
+                    <default>false</default>
+                    <label>3 BHK Premium Flat</label>
+                </value>
+                <value>
+                    <fullName>4 BHK Sky Penthouse</fullName>
+                    <default>false</default>
+                    <label>4 BHK Sky Penthouse</label>
+                </value>
+                <value>
+                    <fullName>3 BHK Luxury Villa</fullName>
+                    <default>false</default>
+                    <label>3 BHK Luxury Villa</label>
+                </value>
+                <value>
+                    <fullName>4 BHK Presidential Villa</fullName>
+                    <default>false</default>
+                    <label>4 BHK Presidential Villa</label>
+                </value>
+                <value>
+                    <fullName>Duplex Villa</fullName>
+                    <default>false</default>
+                    <label>Duplex Villa</label>
+                </value>
+                <value>
+                    <fullName>Grade-A Office Suite</fullName>
+                    <default>false</default>
+                    <label>Grade-A Office Suite</label>
+                </value>
+                <value>
+                    <fullName>Retail Showroom</fullName>
+                    <default>false</default>
+                    <label>Retail Showroom</label>
+                </value>
+                <value>
+                    <fullName>Anchor Store</fullName>
+                    <default>false</default>
+                    <label>Anchor Store</label>
+                </value>
+                <value>
+                    <fullName>Food Court Bay</fullName>
+                    <default>false</default>
+                    <label>Food Court Bay</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Carpet_Area__c</fullName>
+        <description>Usable RERA carpet area in square feet.</description>
+        <externalId>false</externalId>
+        <label>Carpet Area (Sq.Ft)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billable_Area__c</fullName>
+        <description>Effective saleable / billable area in square feet depending on record type (Super Built-Up Area for Apartment/Commercial, Plot Area/Carpet Area for Villa).</description>
+        <externalId>false</externalId>
+        <formula>IF(RecordType.DeveloperName = &apos;Villa_Unit&apos;, 
+   BLANKVALUE(Plot_Area__c, BLANKVALUE(Carpet_Area__c, 0)), 
+   BLANKVALUE(Super_Built_Up_Area__c, BLANKVALUE(Carpet_Area__c, 0))
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Effective pricing area: Super Built-Up for Apartment/Commercial; Plot/Carpet for Villa.</inlineHelpText>
+        <label>Billable Area (Sq.Ft)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Booking__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lead enquiry that holds the current reservation or blocking.</description>
+        <label>Current Booking</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Booked Units</relationshipLabel>
+        <relationshipName>Booked_Units</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Possession_Date__c</fullName>
+        <description>Target date for key handover.</description>
+        <label>Possession Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Amenities_Charge__c</fullName>
+        <description>One-time amenities and infrastructure development fee inherited from parent project.</description>
+        <formula>BLANKVALUE(Phase__r.Project__r.Amenities_Infrastructure_Charge__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Inherited from Project Amenities &amp; Infrastructure Charge.</inlineHelpText>
+        <label>Amenities &amp; Infrastructure Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Furnishing_Status__c</fullName>
+        <description>Furnishing handover state (especially important for commercial and high-end villas).</description>
+        <label>Furnishing Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unfurnished</fullName>
+                    <default>true</default>
+                    <label>Unfurnished</label>
+                </value>
+                <value>
+                    <fullName>Semi-Furnished</fullName>
+                    <default>false</default>
+                    <label>Semi-Furnished</label>
+                </value>
+                <value>
+                    <fullName>Fully Furnished</fullName>
+                    <default>false</default>
+                    <label>Fully Furnished</label>
+                </value>
+                <value>
+                    <fullName>Bare Shell</fullName>
+                    <default>false</default>
+                    <label>Bare Shell</label>
+                </value>
+                <value>
+                    <fullName>Warm Shell</fullName>
+                    <default>false</default>
+                    <label>Warm Shell</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Parking_Available__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates whether dedicated covered parking or EV slot is allotted.</description>
+        <label>Parking Available</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Base_Rate_Per_SqFt__c</fullName>
+        <description>Base selling rate per square foot for this property unit.</description>
+        <inlineHelpText>Enter the base price per sq.ft (e.g. ₹5,500). System will auto-calculate Base Price based on unit area.</inlineHelpText>
+        <label>Base Rate Per Sq.Ft</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Property_Identifier__c</fullName>
+        <description>This fields is created for back end Purpose. To reprensent Icon on the Units Fields.. This is field Not be in in the UI</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Phase__r.Project__r.Project_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Property Identifier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Super_Built_Up_Area__c</fullName>
+        <description>Total super built-up area including loading and common spaces in square feet.</description>
+        <externalId>false</externalId>
+        <label>Super Built-Up Area (Sq.Ft)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Photo_Content_Key__c</fullName>
+        <description>CMS Content Key or Image URL for interior sample flat/villa/office photography.</description>
+        <externalId>false</externalId>
+        <label>Sample Photo Content Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_All_Inclusive_Price__c</fullName>
+        <description>All-inclusive purchase cost comprising base unit price, amenities/infrastructure fee, and advance maintenance.</description>
+        <formula>BLANKVALUE(Price__c, 0) + Amenities_Charge__c + Advance_Maintenance_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Base Unit Price + Amenities Charge + Advance Maintenance Amount.</inlineHelpText>
+        <label>Total All-Inclusive Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Advance_Maintenance_Amount__c</fullName>
+        <description>Total advance maintenance (CAM) calculated for the advance period based on unit area and project monthly rate.</description>
+        <formula>BLANKVALUE(Super_Built_Up_Area__c, BLANKVALUE(Carpet_Area__c, 0)) * BLANKVALUE(Phase__r.Project__r.Maintenance_Rate_Per_SqFt__c, 0) * (BLANKVALUE(Phase__r.Project__r.Advance_Maintenance_Years__c, 3) * 12)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Auto-calculated: Area (sq.ft) × Monthly Rate × (Advance Years × 12 months).</inlineHelpText>
+        <label>Advance Maintenance Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <recordTypes>
+        <fullName>Villa_Unit</fullName>
+        <active>true</active>
+        <description>Luxury independent villa, duplex, or row house with dedicated plot and private garden.</description>
+        <label>Villa Unit</label>
+        <picklistValues>
+            <picklist>BHK__c</picklist>
+            <values>
+                <fullName>3 BHK</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>4 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 BHK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Facing__c</picklist>
+            <values>
+                <fullName>East</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>North</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North-East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnishing_Status__c</picklist>
+            <values>
+                <fullName>Fully Furnished</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Furnished</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Unfurnished</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Available</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Occupied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reserved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Offer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Type__c</picklist>
+            <values>
+                <fullName>3 BHK Luxury Villa</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>4 BHK Presidential Villa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplex Villa</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Apartment_Flat</fullName>
+        <active>true</active>
+        <description>Standard residential flat or penthouse in a high-rise tower.</description>
+        <label>Apartment Flat</label>
+        <picklistValues>
+            <picklist>BHK__c</picklist>
+            <values>
+                <fullName>1 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 BHK</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>3 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 BHK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Facing__c</picklist>
+            <values>
+                <fullName>East</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>North</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North-East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North-West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South-East</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South-West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnishing_Status__c</picklist>
+            <values>
+                <fullName>Fully Furnished</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Semi-Furnished</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unfurnished</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Available</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Occupied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reserved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Offer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Type__c</picklist>
+            <values>
+                <fullName>1 BHK Apartment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 BHK Luxury Flat</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>3 BHK Premium Flat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 BHK Sky Penthouse</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Commercial_Space</fullName>
+        <active>true</active>
+        <description>Commercial Grade-A corporate office suite, retail showroom, or food court bay.</description>
+        <label>Commercial Space</label>
+        <picklistValues>
+            <picklist>BHK__c</picklist>
+            <values>
+                <fullName>1 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 BHK</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>3 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 BHK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 BHK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Facing__c</picklist>
+            <values>
+                <fullName>East</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>North</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Furnishing_Status__c</picklist>
+            <values>
+                <fullName>Bare Shell</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Fully Furnished</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm Shell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Available</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Occupied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reserved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Offer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Unit_Type__c</picklist>
+            <values>
+                <fullName>Anchor Store</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food Court Bay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Grade-A Office Suite</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Retail Showroom</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Price_Positive</fullName>
+        <active>true</active>
+        <description>Price must be greater than zero</description>
+        <errorConditionFormula>Price__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Price__c</errorDisplayField>
+        <errorMessage>Price must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Positive_Values</fullName>
+        <active>true</active>
+        <description>Unit price and carpet area must be positive non-zero numbers.</description>
+        <errorConditionFormula>Price__c &lt;= 0 || Carpet_Area__c &lt;= 0</errorConditionFormula>
+        <errorMessage>Price and Carpet Area must be positive values.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rule_Floor_Bounds</fullName>
+        <active>false</active>
+        <description>Ensures the Floor is between 0 and the parent Phase&apos;s Total Floors for Apartment Flats and Commercial Spaces</description>
+        <errorConditionFormula>AND(
+    OR(
+        RecordType.DeveloperName = &quot;Apartment_Flat&quot;,
+        RecordType.DeveloperName = &quot;Commercial_Space&quot;
+    ),
+    OR(
+        ISBLANK(Floor__c),
+        Floor__c &lt; 0,
+        ISBLANK(Phase__r.Total_Floors__c),
+        Floor__c &gt; Phase__r.Total_Floors__c
+    )
+)</errorConditionFormula>
+        <errorDisplayField>Floor__c</errorDisplayField>
+        <errorMessage>Floor must be between 0 and the Phase&apos;s Total Floors.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Bathrooms_Positive</fullName>
+        <active>true</active>
+        <description>Checks that the Bathrooms value is greater than zero when entered for residential properties. Commercial spaces are excluded</description>
+        <errorConditionFormula>AND(
+    RecordType.DeveloperName &lt;&gt; &quot;Commercial_Space&quot;,
+    NOT(ISBLANK(Bathrooms__c)),
+    Bathrooms__c &lt;= 0
+)</errorConditionFormula>
+        <errorDisplayField>Bathrooms__c</errorDisplayField>
+        <errorMessage>Bathroom count must be greater than zero for residential property units</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Plot_Area_Positive</fullName>
+        <active>true</active>
+        <description>Checks that Plot Area is greater than zero when entered</description>
+        <errorConditionFormula>AND(
+    NOT(ISBLANK(Plot_Area__c)),
+    Plot_Area__c &lt;= 0
+)</errorConditionFormula>
+        <errorDisplayField>Plot_Area__c</errorDisplayField>
+        <errorMessage>Plot Area must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Carpet_Area_Positive</fullName>
+        <active>true</active>
+        <description>Ensures Carpet Area is greater than zero</description>
+        <errorConditionFormula>Carpet_Area__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Carpet_Area__c</errorDisplayField>
+        <errorMessage>Carpet Area must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Super_Built_Up_Area_Positive</fullName>
+        <active>true</active>
+        <description>Checks that Super Built-Up Area is greater than zero when entered</description>
+        <errorConditionFormula>AND(
+    NOT(ISBLANK(Super_Built_Up_Area__c)),
+    Super_Built_Up_Area__c &lt;= 0
+)</errorConditionFormula>
+        <errorDisplayField>Super_Built_Up_Area__c</errorDisplayField>
+        <errorMessage>Super Built-Up Area must be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Restrict_Wrong_Unit_Record_Type</fullName>
+        <active>true</active>
+        <description>Prevents users from selecting a Unit Record Type that does not match the parent Phase Type</description>
+        <errorConditionFormula>NOT(
+    OR(
+        AND(
+            OR(
+                ISPICKVAL(Phase__r.Phase_Type__c, &quot;Tower or Block&quot;),
+                ISPICKVAL(Phase__r.Phase_Type__c, &quot;Tower / Block&quot;)
+            ),
+            RecordType.DeveloperName = &quot;Apartment_Flat&quot;
+        ),
+        AND(
+            ISPICKVAL(Phase__r.Phase_Type__c, &quot;Villa Enclave&quot;),
+            RecordType.DeveloperName = &quot;Villa_Unit&quot;
+        ),
+        AND(
+            ISPICKVAL(Phase__r.Phase_Type__c, &quot;Commercial Wing&quot;),
+            RecordType.DeveloperName = &quot;Commercial_Space&quot;
+        )
+    )
+)</errorConditionFormula>
+        <errorMessage>This Unit Record Type is not allowed for the selected Phase Type. Please select the correct Unit Record Type</errorMessage>
+    </validationRules>
+</CustomObject>

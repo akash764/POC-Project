@@ -1,0 +1,295 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.un-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(7, 23, 39, 0.06);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.un-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(7, 23, 39, 0.12);
+    border-color: rgba(217, 163, 35, 0.45);
+}
+
+.un-card-media {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #071727;
+    overflow: hidden;
+}
+
+.un-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.un-card:hover .un-card-img {
+    transform: scale(1.05);
+}
+
+/* Badges on Image */
+.un-card-badge-left {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    background: rgba(7, 23, 39, 0.88);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.un-card-badge-right {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    background: rgba(7, 23, 39, 0.88);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.un-card-badge-location {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0.85rem;
+    background: rgba(7, 23, 39, 0.90);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* Corner Ribbon Banner (Matches Appaswamy Reference) */
+.un-corner-ribbon {
+    position: absolute;
+    top: 30px;
+    right: -48px;
+    transform: rotate(45deg);
+    width: 190px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Montserrat', sans-serif;
+    font-size: 0.56rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    padding: 4px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.un-corner-ribbon span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Ribbon Colors Matching Real Estate References */
+.ribbon-new-launch {
+    background: linear-gradient(135deg, #78b82a 0%, #5d991b 100%);
+    color: #ffffff;
+}
+
+.ribbon-ready-move {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: #ffffff;
+}
+
+.ribbon-handing-over {
+    background: linear-gradient(135deg, #ffc72c 0%, #e5a800 100%);
+    color: #1a1a1a;
+}
+
+.ribbon-under-construction {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: #ffffff;
+}
+
+.ribbon-ongoing {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    color: #ffffff;
+}
+
+/* Card Body */
+.un-card-body {
+    padding: 1.25rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #ffffff;
+}
+
+.un-card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.un-card-title-group {
+    flex: 1;
+}
+
+.un-card-title {
+    font-family: 'Cinzel', 'Plus Jakarta Sans', serif;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #071727;
+    margin-bottom: 0.3rem;
+    line-height: 1.25;
+}
+
+.un-card-tagline {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #334155;
+    line-height: 1.45;
+}
+
+/* Circular Arrow Button */
+.un-card-circle-arrow {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid #e2e8f0;
+    background: #ffffff;
+    color: #071727;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.un-card:hover .un-card-circle-arrow {
+    background: #D9A323;
+    border-color: #D9A323;
+    color: #071727;
+    transform: scale(1.08);
+}
+
+/* Card Meta */
+.un-card-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    background: #F7F7F5;
+    padding: 0.65rem 0.85rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    margin-top: auto;
+}
+
+.un-meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.un-meta-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.un-meta-value {
+    font-size: 0.88rem;
+    color: #071727;
+    font-weight: 700;
+}
+
+/* Amenities Preview Chips */
+.un-card-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.un-amenity-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.un-amenity-more {
+    background: #e2e8f0;
+    color: #475569;
+    font-weight: 600;
+}
+
+/* Secondary Meta Row */
+.un-card-meta-secondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: #334155;
+    padding-top: 0.25rem;
+}
+
+.un-blocks-badge {
+    font-weight: 600;
+    color: #0B2340;
+}
+
+.un-inventory-badge {
+    font-weight: 600;
+    font-size: 0.75rem;
+}

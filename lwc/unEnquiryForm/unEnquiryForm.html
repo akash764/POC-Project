@@ -1,0 +1,158 @@
+<template>
+    <div class={containerClass}>
+        <!-- Form Header -->
+        <div class="un-form-header">
+            <h3 class="un-form-title">{computedFormTitle}</h3>
+            <p class="un-form-subtitle">{computedFormSubtitle}</p>
+        </div>
+
+        <!-- Success Confirmation View -->
+        <template if:true={isSubmitted}>
+            <div class="un-success-state" role="alert">
+                <div class="un-success-badge">✓</div>
+                <h4 class="un-success-title">Enquiry Received</h4>
+                <p class="un-success-msg">{successMessage}</p>
+                <button class="un-btn-reset-form" onclick={handleResetForm}>Submit Another Enquiry</button>
+            </div>
+        </template>
+
+        <!-- Form Body -->
+        <template if:false={isSubmitted}>
+            <form onsubmit={handleSubmit} novalidate class="un-enquiry-fields">
+                <!-- Name -->
+                <div class="un-form-group">
+                    <label for="enquiry-name" class="un-label">Full Name <span class="required">*</span></label>
+                    <input
+                        type="text"
+                        id="enquiry-name"
+                        class={nameInputClass}
+                        placeholder="e.g. Ramesh Kumar"
+                        value={fullName}
+                        oninput={handleNameChange}
+                        required
+                    />
+                    <template if:true={errors.fullName}>
+                        <span class="un-field-error">{errors.fullName}</span>
+                    </template>
+                </div>
+
+                <!-- Phone and Email Grid -->
+                <div class="un-form-row">
+                    <div class="un-form-group">
+                        <label for="enquiry-phone" class="un-label">Phone Number <span class="required">*</span></label>
+                        <input
+                            type="tel"
+                            id="enquiry-phone"
+                            class={phoneInputClass}
+                            placeholder="e.g. 98400 12345"
+                            value={phone}
+                            oninput={handlePhoneChange}
+                        />
+                        <template if:true={errors.phone}>
+                            <span class="un-field-error">{errors.phone}</span>
+                        </template>
+                    </div>
+
+                    <div class="un-form-group">
+                        <label for="enquiry-email" class="un-label">Email Address <span class="required">*</span></label>
+                        <input
+                            type="email"
+                            id="enquiry-email"
+                            class={emailInputClass}
+                            placeholder="name@example.com"
+                            value={email}
+                            oninput={handleEmailChange}
+                        />
+                        <template if:true={errors.email}>
+                            <span class="un-field-error">{errors.email}</span>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Preferred Project & Location Preference Grid -->
+                <div class="un-form-row">
+                    <div class="un-form-group">
+                        <label for="enquiry-location" class="un-label">Location Preference <span class="required">*</span></label>
+                        <input
+                            type="text"
+                            id="enquiry-location"
+                            class={locationInputClass}
+                            placeholder="e.g. Anna Nagar, OMR, Whitefield"
+                            value={locationPreference}
+                            oninput={handleLocationChange}
+                            required
+                        />
+                        <template if:true={errors.locationPreference}>
+                            <span class="un-field-error">{errors.locationPreference}</span>
+                        </template>
+                    </div>
+
+                    <div class="un-form-group">
+                        <label for="enquiry-project" class="un-label">Preferred Project</label>
+                        <select
+                            id="enquiry-project"
+                            class="un-input"
+                            onchange={handleProjectChange}>
+                            <option value="">Select a Project (Optional)</option>
+                            <template for:each={projectOptions} for:item="opt">
+                                <option key={opt.value} value={opt.value} selected={opt.isSelected}>{opt.label}</option>
+                            </template>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Configuration Preference & Budget Grid -->
+                <div class="un-form-row">
+                    <div class="un-form-group">
+                        <label for="enquiry-bhk" class="un-label">Configuration Preference</label>
+                        <select id="enquiry-bhk" class="un-input" onchange={handleBhkChange}>
+                            <template for:each={bhkOptions} for:item="opt">
+                                <option key={opt.value} value={opt.value} selected={opt.isSelected}>{opt.label}</option>
+                            </template>
+                        </select>
+                    </div>
+
+                    <div class="un-form-group">
+                        <label for="enquiry-budget" class="un-label">Estimated Budget (in INR)</label>
+                        <input
+                            type="number"
+                            id="enquiry-budget"
+                            class={budgetInputClass}
+                            placeholder="e.g. 7500000"
+                            value={budget}
+                            min="0"
+                            oninput={handleBudgetChange}
+                        />
+                        <template if:true={errors.budget}>
+                            <span class="un-field-error">{errors.budget}</span>
+                        </template>
+                    </div>
+                </div>
+
+
+                <!-- Global Error Banner -->
+                <template if:true={serverErrorMessage}>
+                    <div class="un-server-error" role="alert">
+                        {serverErrorMessage}
+                    </div>
+                </template>
+
+                <!-- Submit Button -->
+                <div class="un-submit-action">
+                    <button type="submit" class="un-btn-submit" disabled={isSubmitting}>
+                        <template if:true={isSubmitting}>
+                            <span class="un-btn-spinner"></span> Submitting...
+                        </template>
+                        <template if:false={isSubmitting}>
+                            Request Information &rarr;
+                        </template>
+                    </button>
+                </div>
+
+                <p class="un-privacy-notice">
+                    🔒 Your personal information is kept strictly confidential and used solely for property advisory.
+                </p>
+            </form>
+        </template>
+    </div>
+</template>

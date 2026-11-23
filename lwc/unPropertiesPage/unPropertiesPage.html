@@ -1,0 +1,78 @@
+<template>
+    <div class="un-properties-page">
+        <!-- Hero Header -->
+        <c-un-hero-banner
+            title="Our Portfolio of Developments"
+            subtitle="Explore meticulously planned residential high-rises, gated villa sanctuaries, and Grade-A commercial parks across prime urban destinations."
+            height="small"
+            primary-action-label=""
+            secondary-action-label="">
+        </c-un-hero-banner>
+
+        <!-- Main Content Area -->
+        <div class="un-content-container">
+            <!-- Category Menu Tabs (Apartment, Commercial, Villa, All) -->
+            <div class="un-category-tabs-container">
+                <div class="un-category-tabs" role="tablist" aria-label="Filter by property type">
+                    <button class={allTabClass} onclick={handleTypeTab} data-type="All" role="tab" aria-selected={isAllActive}>
+                        <span class="un-tab-icon">✨</span>
+                        <span>All Developments</span>
+                    </button>
+                    <button class={apartmentTabClass} onclick={handleTypeTab} data-type="Residential_Apartment" role="tab" aria-selected={isApartmentActive}>
+                        <span class="un-tab-icon">🏢</span>
+                        <span>Apartments</span>
+                    </button>
+                    <button class={villaTabClass} onclick={handleTypeTab} data-type="Residential_Villa" role="tab" aria-selected={isVillaActive}>
+                        <span class="un-tab-icon">🏡</span>
+                        <span>Luxury Villas</span>
+                    </button>
+                    <button class={commercialTabClass} onclick={handleTypeTab} data-type="Commercial" role="tab" aria-selected={isCommercialActive}>
+                        <span class="un-tab-icon">🏬</span>
+                        <span>Commercial</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Toolbar (City / State) -->
+            <c-un-project-filter
+                cities={filterCities}
+                states={filterStates}
+                state-city-map={filterStateCityMap}
+                selected-city={selectedCity}
+                selected-state={selectedState}
+                onfilterchange={handleFilterChange}>
+            </c-un-project-filter>
+
+            <!-- Results Summary & Count -->
+            <div class="un-results-header">
+                <span class="un-results-count">
+                    Showing <strong>{currentDisplayCount}</strong> of <strong>{totalProjectCount}</strong> Developments
+                </span>
+                <span class="un-results-note">
+                    *All developments remain listed regardless of unit availability.
+                </span>
+            </div>
+
+            <!-- Project Grid / List -->
+            <c-un-project-list
+                projects={projects}
+                is-loading={isLoading}
+                has-error={hasError}
+                error-message={errorMessage}
+                onselectproject={handleViewProjectDetails}
+                onenquireproject={handleProjectEnquire}
+                onretry={fetchProjects}
+                onresetfilters={handleResetFilters}>
+            </c-un-project-list>
+
+            <!-- Bounded Pagination -->
+            <template if:true={showPagination}>
+                <c-un-pagination
+                    current-page={currentPage}
+                    total-pages={totalPages}
+                    onpagechange={handlePageChange}>
+                </c-un-pagination>
+            </template>
+        </div>
+    </div>
+</template>

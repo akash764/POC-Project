@@ -1,0 +1,241 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.un-home-page {
+    width: 100%;
+    background-color: #F7F7F5;
+}
+
+.un-content-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.un-content-container-narrow {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.un-section {
+    padding: 4.5rem 0;
+}
+
+.un-featured-section {
+    padding: 6.5rem 0 4.5rem;
+}
+
+/* Featured Section Header Row (Matching Mockup) */
+.un-featured-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.un-eyebrow-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.un-eyebrow-line {
+    width: 28px;
+    height: 1.5px;
+    background-color: #D9A323;
+}
+
+.un-eyebrow-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #D9A323;
+    text-transform: uppercase;
+}
+
+.un-featured-title {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #071727;
+    line-height: 1.2;
+}
+
+.un-featured-counter {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #64748b;
+    padding-bottom: 0.4rem;
+}
+
+.un-center-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.un-btn-view-all {
+    background: #071727;
+    color: #ffffff;
+    border: 1.5px solid #071727;
+    border-radius: 30px;
+    padding: 0.8rem 2.2rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(7, 23, 39, 0.15);
+}
+
+.un-btn-view-all:hover {
+    background: #D9A323;
+    border-color: #D9A323;
+    color: #071727;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 163, 35, 0.35);
+}
+
+/* Why Choose UrbanNest Pillars */
+.un-why-section {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.un-center-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+}
+
+.un-gold-eyebrow {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #D9A323;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+.un-section-h2 {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #071727;
+    margin-bottom: 0.8rem;
+}
+
+.un-section-p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.un-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.un-pillar-card {
+    background: #F7F7F5;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.un-pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(7, 23, 39, 0.08);
+}
+
+.un-pillar-img-box {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.un-pillar-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.un-pillar-card:hover .un-pillar-photo {
+    transform: scale(1.05);
+}
+
+.un-pillar-text {
+    padding: 1.5rem;
+}
+
+.un-pillar-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #D9A323;
+    background: rgba(217, 163, 35, 0.12);
+    border: 1px solid rgba(217, 163, 35, 0.3);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.un-pillar-badge.gold {
+    color: #D9A323;
+    background: rgba(217, 163, 35, 0.12);
+}
+
+.un-pillar-badge.navy {
+    color: #0B2340;
+    background: rgba(11, 35, 64, 0.1);
+    border-color: rgba(11, 35, 64, 0.25);
+}
+
+.un-pillar-title {
+    font-family: 'Cinzel', 'Plus Jakarta Sans', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #071727;
+    margin-bottom: 0.6rem;
+}
+
+.un-pillar-desc {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.55;
+}
+
+/* CTA Section */
+.un-cta-section {
+    background-color: #F7F7F5;
+    padding: 4.5rem 0 5.5rem;
+}
+
+@media (max-width: 900px) {
+    .un-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .un-featured-title {
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>UrbanNest Location Routing</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Chennai_queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>OR(     CONTAINS(LOWER(Location_Preference__c), &quot;chennai&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;tamil&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;omr&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;anna nagar&quot;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Hyderbad_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>OR(     CONTAINS(LOWER(Location_Preference__c), &quot;hyderabad&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;hyderbad&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;telangana&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;hitec&quot;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>General_Sales_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>OR(     CONTAINS(LOWER(Location_Preference__c), &quot;bangalore&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;bengaluru&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;karnataka&quot;),     CONTAINS(LOWER(Location_Preference__c), &quot;whitefield&quot;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>General_Sales_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>NOT(ISBLANK(Location_Preference__c))</formula>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

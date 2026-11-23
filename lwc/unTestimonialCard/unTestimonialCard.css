@@ -1,0 +1,76 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.un-testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(11, 37, 69, 0.05);
+    border: 1px solid #e5dfd5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.un-testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: #d09b3e;
+}
+
+.un-quote-icon {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: #d09b3e;
+    opacity: 0.6;
+    margin-bottom: -1rem;
+}
+
+.un-quote-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #334155;
+    font-style: italic;
+    margin: 1rem 0 1.5rem;
+    flex-grow: 1;
+}
+
+.un-author-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid #faf7f2;
+    padding-top: 1.25rem;
+}
+
+.un-author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #0b2545;
+    color: #d09b3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid rgba(208, 155, 62, 0.4);
+}
+
+.un-author-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0b2545;
+    margin: 0;
+}
+
+.un-author-role {
+    font-size: 0.78rem;
+    color: #64748b;
+}

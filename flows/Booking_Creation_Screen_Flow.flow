@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <name>Choice_Cancellation_In_Progress</name>
+        <choiceText>Cancellation In-Progress</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cancellation In-Progress</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_Cancelled</name>
+        <choiceText>Cancelled</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cancelled</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_Completed</name>
+        <choiceText>Completed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Completed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_CR_Dispute</name>
+        <choiceText>Disputed Agreement Terms</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Disputed Agreement Terms</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_CR_Loan</name>
+        <choiceText>Home Loan Rejected</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Home Loan Rejected</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_CR_Mind</name>
+        <choiceText>Change of Mind</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Change of Mind</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_CR_None</name>
+        <choiceText>--None--</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_CR_Personal</name>
+        <choiceText>Personal Financial Constraints</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Personal Financial Constraints</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_CR_Relocation</name>
+        <choiceText>Relocation / Transfer</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Relocation / Transfer</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_RS_Approved</name>
+        <choiceText>Approved by Finance</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Approved by Finance</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_RS_Completed</name>
+        <choiceText>Refund Completed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Refund Completed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_RS_Not_Applicable</name>
+        <choiceText>Not Applicable</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Applicable</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_RS_Pending</name>
+        <choiceText>Pending Approval</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Pending Approval</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_RS_Processed</name>
+        <choiceText>Refund Processed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Refund Processed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_Sale_Agreement_Executed</name>
+        <choiceText>Sale Agreement Executed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Sale Agreement Executed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_Token_Received</name>
+        <choiceText>Token Received</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Token Received</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Choice_Under_Handover</name>
+        <choiceText>Under Handover</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Under Handover</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Decision_Active_Booking_Exists</name>
+        <label>Active Booking Exists?</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Get_Confirmed_Quote</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Active Booking</defaultConnectorLabel>
+        <rules>
+            <name>Rule_Booking_Already_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Booking.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Screen_Booking_Already_Exists</targetReference>
+            </connector>
+            <label>Booking Already Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Has_Booked_Unit</name>
+        <label>Has Booked Unit?</label>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>Screen_Success</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Unit Allocated</defaultConnectorLabel>
+        <rules>
+            <name>Rule_Unit_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formulaEffectiveBookedUnitId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Booked_Unit_Status</targetReference>
+            </connector>
+            <label>Unit Selected</label>
+        </rules>
+    </decisions>
+    <description>Screen flow launched from Opportunity to create a Booking record with pre-populated Primary Buyer, Project, Booked Unit, Source Deal, Token Received status, and Confirmed Quote Final Sale Price, updating Unit status to Under Offer.</description>
+    <dynamicChoiceSets>
+        <name>BookingStatus</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Booking_Status__c</picklistField>
+        <picklistObject>Booking__c</picklistObject>
+    </dynamicChoiceSets>
+    <ends>
+        <name>END_ELEMENT_4</name>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_5</name>
+        <locationX>578</locationX>
+        <locationY>1106</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_6</name>
+        <locationX>578</locationX>
+        <locationY>1430</locationY>
+    </ends>
+    <environments>Default</environments>
+    <formulas>
+        <name>formulaEffectiveBookedUnitId</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!Lookup_Booked_Unit.recordId})), {!Lookup_Booked_Unit.recordId}, {!Get_Opportunity.Property_Unit__c})</expression>
+    </formulas>
+    <formulas>
+        <name>formulaEffectiveBuyerId</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!Lookup_Primary_Buyer.recordId})), {!Lookup_Primary_Buyer.recordId}, {!Get_Opportunity.AccountId})</expression>
+    </formulas>
+    <formulas>
+        <name>formulaEffectiveProjectId</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!Lookup_Project.recordId})), {!Lookup_Project.recordId}, {!Get_Opportunity.Project__c})</expression>
+    </formulas>
+    <formulas>
+        <name>formulaEffectiveSourceDealId</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!Lookup_Source_Deal.recordId})), {!Lookup_Source_Deal.recordId}, {!Get_Opportunity.Id})</expression>
+    </formulas>
+    <formulas>
+        <name>formulaFinalPrice</name>
+        <dataType>Currency</dataType>
+        <expression>IF(NOT(ISBLANK({!Get_Confirmed_Quote.Total_Agreement_Amount__c})), {!Get_Confirmed_Quote.Total_Agreement_Amount__c}, IF(NOT(ISBLANK({!Get_Confirmed_Quote.TotalPrice})), {!Get_Confirmed_Quote.TotalPrice}, {!Get_Opportunity.Amount}))</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Create Booking {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Create Booking Screen Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Booking_Record</name>
+        <label>Create Booking Record</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <assignRecordIdToReference>varCreatedBookingId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Decision_Has_Booked_Unit</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Screen_Error</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>formulaEffectiveBuyerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Booking_Date__c</field>
+            <value>
+                <elementReference>Input_Date_of_Booking</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Booking_Status__c</field>
+            <value>
+                <stringValue>Waiting Token Payement</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Final_Agreed_Price__c</field>
+            <value>
+                <elementReference>Input_Final_Sale_Price</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>formulaEffectiveSourceDealId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project__c</field>
+            <value>
+                <elementReference>formulaEffectiveProjectId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Property_Unit__c</field>
+            <value>
+                <elementReference>formulaEffectiveBookedUnitId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Booking__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Confirmed_Quote</name>
+        <label>Get Confirmed Quote</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Screen_New_Booking</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Confirmed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>IsSyncing</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Quote</object>
+        <sortField>LastModifiedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Existing_Booking</name>
+        <label>Get Existing Active Booking</label>
+        <locationX>314</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_Active_Booking_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Opportunity__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Booking_Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Cancelled</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Booking__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Current Opportunity</label>
+        <locationX>314</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Existing_Booking</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Booked_Unit_Status</name>
+        <label>Update Booked Unit to Under Offer</label>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
+        <connector>
+            <targetReference>Screen_Success</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Screen_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>formulaEffectiveBookedUnitId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Under Offer</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Property_Unit__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Screen_Booking_Already_Exists</name>
+        <label>Active Booking Exists</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>END_ELEMENT_4</targetReference>
+        </connector>
+        <fields>
+            <name>Display_Booking_Exists_Warning</name>
+            <fieldText>&lt;div style=&quot;padding: 20px; background-color: #FFFBE6; border: 1px solid #FFE58F; border-radius: 8px;&quot;&gt;
+&lt;div style=&quot;display: flex; align-items: center; margin-bottom: 12px;&quot;&gt;
+&lt;span style=&quot;font-size: 24px; margin-right: 8px;&quot;&gt;⚠️&lt;/span&gt;
+&lt;h2 style=&quot;color: #D46B08; font-size: 18px; font-weight: bold; margin: 0;&quot;&gt;Active Booking Already Exists&lt;/h2&gt;
+&lt;/div&gt;
+&lt;p style=&quot;color: #374151; font-size: 14px; margin-bottom: 12px;&quot;&gt;An active booking (&lt;b&gt;{!Get_Existing_Booking.Name}&lt;/b&gt;) is already linked to this Opportunity. Under our business rules, only one active booking can be associated with a deal.&lt;/p&gt;
+&lt;div style=&quot;background-color: #FFFFFF; padding: 12px; border: 1px solid #E5E7EB; border-radius: 6px; margin-bottom: 16px;&quot;&gt;
+&lt;p style=&quot;margin: 4px 0; font-size: 13px;&quot;&gt;&lt;b&gt;Booking Number:&lt;/b&gt; {!Get_Existing_Booking.Name}&lt;/p&gt;
+&lt;p style=&quot;margin: 4px 0; font-size: 13px;&quot;&gt;&lt;b&gt;Booking Status:&lt;/b&gt; {!Get_Existing_Booking.Booking_Status__c}&lt;/p&gt;
+&lt;p style=&quot;margin: 4px 0; font-size: 13px;&quot;&gt;&lt;b&gt;Booking Date:&lt;/b&gt; {!Get_Existing_Booking.Booking_Date__c}&lt;/p&gt;
+&lt;p style=&quot;margin: 4px 0; font-size: 13px;&quot;&gt;&lt;b&gt;Agreed Price:&lt;/b&gt; {!Get_Existing_Booking.Final_Agreed_Price__c}&lt;/p&gt;
+&lt;/div&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a href=&quot;/lightning/r/Booking__c/{!Get_Existing_Booking.Id}/view&quot; target=&quot;_top&quot; style=&quot;display: inline-block; padding: 10px 20px; background-color: #0070D2; color: #FFFFFF; font-weight: bold; text-decoration: none; border-radius: 6px;&quot;&gt;View Existing Booking Record&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_Error</name>
+        <label>Error</label>
+        <locationX>578</locationX>
+        <locationY>998</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>END_ELEMENT_5</targetReference>
+        </connector>
+        <fields>
+            <name>Display_Fault_Error</name>
+            <fieldText>&lt;div style=&quot;padding: 16px; background-color: #FFF2F2; border: 1px solid #EA001E; border-radius: 8px;&quot;&gt;
+&lt;h3 style=&quot;color: #BA0517; margin-top: 0;&quot;&gt;Booking Could Not Be Completed&lt;/h3&gt;
+&lt;p style=&quot;color: #374151; font-size: 13px;&quot;&gt;&lt;b&gt;Error Details:&lt;/b&gt; {!$Flow.FaultMessage}&lt;/p&gt;
+&lt;p style=&quot;color: #6B7280; font-size: 12px;&quot;&gt;Please review the entered details or click Previous to adjust.&lt;/p&gt;
+&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_New_Booking</name>
+        <label>New Booking</label>
+        <locationX>578</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Booking_Record</targetReference>
+        </connector>
+        <fields>
+            <name>Header_New_Booking</name>
+            <fieldText>&lt;div style=&quot;display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #E5E7EB; padding-bottom: 8px; margin-bottom: 12px;&quot;&gt;&lt;div style=&quot;font-size: 20px; font-weight: 500; color: #111827;&quot;&gt;New Booking&lt;/div&gt;&lt;div style=&quot;font-size: 12px; color: #EA001E; font-weight: 500;&quot;&gt;* = Required Information&lt;/div&gt;&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Banner_Information</name>
+            <fieldText>&lt;div style=&quot;background: #F3F4F6; padding: 6px 12px; font-weight: 600; font-size: 13px; color: #374151; border-radius: 4px; margin-bottom: 8px;&quot;&gt;Information&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Screen_New_Booking_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_New_Booking_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Lookup_Primary_Buyer</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>Account__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Primary Buyer</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Booking__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>Get_Opportunity.AccountId</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Lookup_Project</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>Project__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Project</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Booking__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>Get_Opportunity.Project__c</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Lookup_Booked_Unit</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>Property_Unit__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Booked Unit</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Booking__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>Get_Opportunity.Property_Unit__c</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Lookup_Source_Deal</name>
+                    <extensionName>flowruntime:lookup</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>fieldApiName</name>
+                        <value>
+                            <stringValue>Opportunity__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Source Deal</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>objectApiName</name>
+                        <value>
+                            <stringValue>Booking__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>Get_Opportunity.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_New_Booking_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Display_Booking_Number</name>
+                    <fieldText>&lt;div style=&quot;margin-bottom: 14px;&quot;&gt;&lt;label style=&quot;font-size: 12px; color: #4B5563; font-weight: 500; display: block; margin-bottom: 3px;&quot;&gt;Booking Number&lt;/label&gt;&lt;div style=&quot;padding: 6px 12px; background: #F9FAFB; border: 1px dashed #D1D5DB; border-radius: 4px; font-size: 13px; color: #6B7280; font-style: italic;&quot;&gt;Auto-generated upon save (BK-YYYY-XXXX)&lt;/div&gt;&lt;/div&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Input_Booking_Status</name>
+                    <choiceReferences>BookingStatus</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <stringValue>Waiting Token Payement</stringValue>
+                    </defaultValue>
+                    <fieldText>Booking Status</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Input_Date_of_Booking</name>
+                    <dataType>Date</dataType>
+                    <defaultValue>
+                        <elementReference>$Flow.CurrentDate</elementReference>
+                    </defaultValue>
+                    <fieldText>Date of Booking</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Banner_Financial_Ledger</name>
+            <fieldText>&lt;div style=&quot;background: #F3F4F6; padding: 6px 12px; font-weight: 600; font-size: 13px; color: #374151; border-radius: 4px; margin-top: 14px; margin-bottom: 8px;&quot;&gt;Financial Ledger Summary&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Screen_New_Booking_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Screen_New_Booking_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Input_Final_Sale_Price</name>
+                    <dataType>Currency</dataType>
+                    <defaultValue>
+                        <elementReference>formulaFinalPrice</elementReference>
+                    </defaultValue>
+                    <fieldText>Final Sale Price</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Screen_New_Booking_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Screen_Success</name>
+        <label>Booking Success</label>
+        <locationX>578</locationX>
+        <locationY>1322</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>END_ELEMENT_6</targetReference>
+        </connector>
+        <fields>
+            <name>Display_Success</name>
+            <fieldText>&lt;div style=&quot;padding: 20px; background-color: #F0FDF4; border: 1px solid #86EFAC; border-radius: 8px; text-align: center;&quot;&gt;
+&lt;div style=&quot;font-size: 28px; margin-bottom: 8px;&quot;&gt;✅&lt;/div&gt;
+&lt;h2 style=&quot;color: #166534; font-size: 20px; font-weight: bold; margin-bottom: 8px;&quot;&gt;Booking Created Successfully!&lt;/h2&gt;
+&lt;p style=&quot;color: #374151; font-size: 14px; margin-bottom: 12px;&quot;&gt;The Booking record has been linked to this Opportunity and the Booked Unit status has been set to &lt;b style=&quot;color: #D97706;&quot;&gt;Under Offer&lt;/b&gt;.&lt;/p&gt;
+&lt;div style=&quot;margin-top: 16px;&quot;&gt;
+&lt;a href=&quot;/lightning/r/Booking__c/{!varCreatedBookingId}/view&quot; target=&quot;_top&quot; style=&quot;display: inline-block; padding: 10px 20px; background-color: #0070D2; color: #FFFFFF; font-weight: bold; text-decoration: none; border-radius: 6px;&quot;&gt;View Created Booking Record&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Done</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCreatedBookingId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

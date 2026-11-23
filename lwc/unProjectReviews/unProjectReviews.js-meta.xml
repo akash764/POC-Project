@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>UrbanNest Project Reviews</masterLabel>
+    <description>Displays customer ratings, verified site visitor reviews, and interactive review submission modal for a project.</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="projectId" type="String" label="Project ID" description="Salesforce Record ID of the Project" />
+            <property name="projectName" type="String" label="Project Name" description="Display Name of the Project" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

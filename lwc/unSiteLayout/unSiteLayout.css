@@ -1,0 +1,100 @@
+:host {
+    --un-navy-950: #061629;
+    --un-navy-900: #0b2545;
+    --un-navy-800: #133863;
+    --un-navy-700: #1c4b82;
+    --un-gold-500: #d09b3e;
+    --un-gold-600: #b8852d;
+    --un-gold-400: #e5b258;
+    --un-gold-100: #fbf5eb;
+    --un-green-600: #2b5d46;
+    --un-green-500: #366e53;
+    --un-green-100: #ebf5f0;
+    --un-charcoal-900: #0b2545;
+    --un-charcoal-700: #334155;
+    --un-charcoal-500: #64748b;
+    --un-bg-light: #faf7f2;
+    --un-bg-white: #ffffff;
+    --un-border-subtle: #e5dfd5;
+    --un-radius-sm: 4px;
+    --un-radius-md: 8px;
+    --un-radius-lg: 16px;
+    --un-shadow-card: 0 4px 20px -2px rgba(11, 37, 69, 0.08);
+    --un-shadow-elevated: 0 20px 40px -10px rgba(11, 37, 69, 0.2);
+    --un-font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+    --un-font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: block;
+    min-height: 100vh;
+    font-family: var(--un-font-sans);
+    color: var(--un-charcoal-900);
+    background-color: var(--un-bg-light);
+}
+
+.un-site-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.un-site-main {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+/* Modal styling */
+.un-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(11, 37, 69, 0.75);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1.5rem;
+}
+
+.un-modal-container {
+    position: relative;
+    background: var(--un-bg-white);
+    border-radius: var(--un-radius-lg);
+    box-shadow: var(--un-shadow-elevated);
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2.5rem 2rem;
+    animation: unModalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(208, 155, 62, 0.3);
+}
+
+@keyframes unModalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.un-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--un-charcoal-500);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.un-modal-close:hover {
+    color: var(--un-gold-500);
+}

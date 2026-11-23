@@ -1,0 +1,10 @@
+<template>
+    <div class="un-empty-container">
+        <div class="un-empty-icon">{icon}</div>
+        <h3 class="un-empty-title">{title}</h3>
+        <p class="un-empty-description">{description}</p>
+        <template if:true={actionLabel}>
+            <button class="un-empty-btn" onclick={handleAction}>{actionLabel}</button>
+        </template>
+    </div>
+</template>

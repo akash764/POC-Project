@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>UrbanNest Header</masterLabel>
+    <description>Navigation header with brand logo, links, and enquiry triggers for UrbanNest.</description>
+    <targets>
+        <target>lightningCommunity__Default</target>
+    </targets>
+</LightningComponentBundle>

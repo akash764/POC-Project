@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Campaign QR Code & Inbound Tracking" icon-name="standard:campaign">
+        <div class="slds-p-around_medium qr-container">
+            <div class="qr-header-desc">
+                <p class="slds-text-body_regular slds-text-color_weak">
+                    Scan or download this QR code for print banners, hoarding posters, or exhibition flyers. Inbound mobile scans auto-attribute leads to this campaign.
+                </p>
+            </div>
+
+            <!-- QR Code Display Card -->
+            <div class="qr-preview-box slds-align_absolute-center slds-m-vertical_medium">
+                <template if:true={qrImageUrl}>
+                    <img src={qrImageUrl} alt="Campaign Tracking QR Code" class="qr-image" />
+                </template>
+            </div>
+
+            <!-- Destination URL Display -->
+            <div class="url-display-box slds-m-bottom_medium">
+                <span class="url-label">Tracking URL:</span>
+                <code class="url-text">{targetUrl}</code>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="slds-grid slds-grid_align-center slds-gutters_x-small button-row">
+                <div class="slds-col">
+                    <lightning-button 
+                        variant="brand" 
+                        label="Download QR Image" 
+                        icon-name="utility:download" 
+                        onclick={handleDownload}>
+                    </lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button 
+                        variant="neutral" 
+                        label={copyButtonLabel} 
+                        icon-name="utility:copy" 
+                        onclick={handleCopyLink}>
+                    </lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-button 
+                        variant="neutral" 
+                        label="Test Open Page" 
+                        icon-name="utility:new_window" 
+                        onclick={handleOpenUrl}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

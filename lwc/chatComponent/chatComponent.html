@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="WhatsApp Chat" icon-name="standard:live_chat">
+        <div class="slds-m-horizontal_small">
+            <template if:false={phone}>
+                <p class="slds-text-color_weak">No phone number found on this record.</p>
+            </template>
+
+            <template if:true={phone}>
+                <section role="log" class="chatArea slds-chat slds-scrollable_y" style="height: 400px;">
+                    <ul class="slds-chat-list">
+                        <template for:each={messages} for:item="m">
+                            <li key={m.key} class={m.itemClass}>
+                                <div class="slds-chat-message">
+                                    <div class="slds-chat-message__body">
+                                        <div class={m.textClass}>
+                                            <span><lightning-formatted-text value={m.text}></lightning-formatted-text></span>
+                                        </div>
+                                        <div class="slds-chat-message__meta">{m.meta}</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </section>
+
+                <div class="slds-grid slds-grid_vertical-align-end slds-m-top_small">
+                    <lightning-input class="slds-col slds-grow" variant="label-hidden" label="Message"
+                        placeholder="Type a message..." value={messageText}
+                        onchange={handleChange} onkeyup={handleKeyUp}></lightning-input>
+                    <lightning-button class="slds-m-left_small" variant="brand" label="Send"
+                        onclick={handleSend} disabled={isSending}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

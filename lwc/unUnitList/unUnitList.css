@@ -1,0 +1,60 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.un-unit-list-container {
+    width: 100%;
+}
+
+.un-bhk-tabs {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    overflow-x: auto;
+}
+
+.un-bhk-tab {
+    background: transparent;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.un-bhk-tab:hover {
+    color: #0b192c;
+    background-color: #f1f5f9;
+}
+
+.un-bhk-tab.is-active {
+    color: #0b192c;
+    background-color: #fbf8f3;
+    border-bottom: 2px solid #c5a880;
+    font-weight: 700;
+}
+
+.un-tab-count {
+    font-size: 0.8rem;
+    color: #c5a880;
+    margin-left: 0.25rem;
+}
+
+.un-units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .un-units-grid {
+        grid-template-columns: 1fr;
+    }
+}

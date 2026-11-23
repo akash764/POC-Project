@@ -1,0 +1,117 @@
+<template>
+    <header class="un-header">
+        <div class="un-header-inner">
+            <!-- Brand Logo from Static Resource UrbanNest_Logo + Brand Name Text -->
+            <a href="./" class="un-logo" aria-label="UrbanNest Real Estate Home">
+                <div class="un-logo-badge">
+                    <img src={logoUrl} alt="UrbanNest Real Estate" class="un-logo-img" />
+                </div>
+                <div class="un-brand-text">
+                    <div class="un-brand-title">
+                        <span class="un-brand-urban">Urban</span><span class="un-brand-nest">Nest</span>
+                    </div>
+                    <div class="un-brand-tagline">
+                        <span class="un-tagline-line"></span>
+                        <span class="un-tagline-text">REAL ESTATE</span>
+                        <span class="un-tagline-line"></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="un-desktop-nav" aria-label="Main Navigation">
+                <a href="./" class="un-nav-link active">Home</a>
+
+                <!-- Properties with Multi-Asset Submenu -->
+                <div class="un-nav-dropdown-wrap">
+                    <a href="./properties" class="un-nav-link un-nav-has-dropdown">
+                        Properties
+                        <span class="un-nav-arrow">&#9662;</span>
+                    </a>
+                    <div class="un-nav-dropdown-menu">
+                        <a href="./properties" class="un-dropdown-item">
+                            <span class="un-item-icon">✨</span>
+                            <div>
+                                <strong class="un-item-title">All Properties</strong>
+                                <span class="un-item-desc">Browse entire portfolio</span>
+                            </div>
+                        </a>
+                        <a href="./properties?type=Residential_Apartment" class="un-dropdown-item">
+                            <span class="un-item-icon">🏢</span>
+                            <div>
+                                <strong class="un-item-title">Apartments</strong>
+                                <span class="un-item-desc">High-rise luxury flats</span>
+                            </div>
+                        </a>
+                        <a href="./properties?type=Residential_Villa" class="un-dropdown-item">
+                            <span class="un-item-icon">🏡</span>
+                            <div>
+                                <strong class="un-item-title">Luxury Villas</strong>
+                                <span class="un-item-desc">Private gated estates</span>
+                            </div>
+                        </a>
+                        <a href="./properties?type=Commercial" class="un-dropdown-item">
+                            <span class="un-item-icon">🏬</span>
+                            <div>
+                                <strong class="un-item-title">Commercial</strong>
+                                <span class="un-item-desc">Grade-A offices &amp; retail</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="./about" class="un-nav-link">About Us</a>
+                <a href="./contact" class="un-nav-link">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="un-header-actions">
+                <button class="un-btn-enquire" onclick={handleQuickEnquiry} aria-label="Enquire about projects">
+                    <span>ENQUIRE NOW</span>
+                    <span class="un-btn-arrow">&rarr;</span>
+                </button>
+                <button class="un-hamburger" onclick={toggleMobileMenu} aria-label="Toggle Navigation Menu">
+                    <span class={hamburgerClass}></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <template if:true={isMobileMenuOpen}>
+            <div class="un-mobile-drawer" onclick={closeMobileMenu}>
+                <div class="un-mobile-nav" onclick={handleDrawerClick}>
+                    <div class="un-drawer-header">
+                        <div class="un-logo-mobile-wrap">
+                            <div class="un-logo-badge small">
+                                <img src={logoUrl} alt="UrbanNest Real Estate" class="un-logo-img-mobile" />
+                            </div>
+                            <div class="un-brand-text mobile">
+                                <div class="un-brand-title">
+                                    <span class="un-brand-urban">Urban</span><span class="un-brand-nest">Nest</span>
+                                </div>
+                                <div class="un-brand-tagline">
+                                    <span class="un-tagline-line"></span>
+                                    <span class="un-tagline-text">REAL ESTATE</span>
+                                    <span class="un-tagline-line"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="un-drawer-close" onclick={closeMobileMenu}>&times;</button>
+                    </div>
+                    <a href="./" class="un-mobile-link" onclick={closeMobileMenu}>Home</a>
+                    <a href="./properties" class="un-mobile-link" onclick={closeMobileMenu}>All Properties</a>
+                    <a href="./properties?type=Residential_Apartment" class="un-mobile-sublink" onclick={closeMobileMenu}>&bull; Apartments</a>
+                    <a href="./properties?type=Residential_Villa" class="un-mobile-sublink" onclick={closeMobileMenu}>&bull; Luxury Villas</a>
+                    <a href="./properties?type=Commercial" class="un-mobile-sublink" onclick={closeMobileMenu}>&bull; Commercial Spaces</a>
+                    <a href="./about" class="un-mobile-link" onclick={closeMobileMenu}>About Us</a>
+                    <a href="./contact" class="un-mobile-link" onclick={closeMobileMenu}>Contact</a>
+                    <div class="un-mobile-cta">
+                        <button class="un-btn-enquire-mobile" onclick={handleQuickEnquiryMobile}>
+                            ENQUIRE NOW &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </header>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>UrbanNest Hero Banner</masterLabel>
+    <description>Architectural hero banner with customizable copy, buttons, and background imagery.</description>
+    <targets>
+        <target>lightningCommunity__Default</target>
+    </targets>
+</LightningComponentBundle>

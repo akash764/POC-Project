@@ -1,0 +1,67 @@
+<template>
+    <article class="un-card" onclick={handleViewDetails}>
+        <!-- Media / Image Container -->
+        <div class="un-card-media">
+            <img src={imageSource} alt={project.name} class="un-card-img" onerror={handleImageError} loading="lazy" />
+
+            <!-- Corner Ribbon Status Badge (New Launch / Ready to Move-In / Under Construction / Handing Over Soon) -->
+            <template if:true={hasRibbonStatus}>
+                <div class={ribbonClass}>
+                    <span>{ribbonLabel}</span>
+                </div>
+            </template>
+
+            <!-- Top Left: Project Type Pill -->
+            <div class="un-card-badge-left">
+                {projectTypeBadge}
+            </div>
+
+            <!-- Bottom Left: Location Pill -->
+            <div class="un-card-badge-location">
+                <span>📍</span> {locationBadge}
+            </div>
+        </div>
+
+        <!-- Content Body -->
+        <div class="un-card-body">
+            <div class="un-card-header-row">
+                <div class="un-card-title-group">
+                    <h3 class="un-card-title">{project.name}</h3>
+                    <p class="un-card-tagline">{projectTagline}</p>
+                </div>
+                <button class="un-card-circle-arrow" onclick={handleViewDetails} aria-label="Explore Project">
+                    &rarr;
+                </button>
+            </div>
+
+            <!-- Highlights / Meta -->
+            <div class="un-card-meta">
+                <div class="un-meta-item">
+                    <span class="un-meta-label">Starting From</span>
+                    <span class="un-meta-value">{formattedStartingPrice}</span>
+                </div>
+                <div class="un-meta-item">
+                    <span class="un-meta-label">Configurations</span>
+                    <span class="un-meta-value">{formattedBhkOptions}</span>
+                </div>
+            </div>
+
+            <!-- Amenities Preview Chips -->
+            <template if:true={hasAmenities}>
+                <div class="un-card-amenities">
+                    <template for:each={cardAmenities} for:item="amenity">
+                        <span key={amenity.id} class="un-amenity-chip">{amenity.icon} {amenity.name}</span>
+                    </template>
+                    <template if:true={hasMoreAmenities}>
+                        <span class="un-amenity-chip un-amenity-more">+{remainingAmenitiesCount} more</span>
+                    </template>
+                </div>
+            </template>
+
+            <div class="un-card-meta-secondary">
+                <span class="un-blocks-badge">{phaseCountLabel}</span>
+                <span class="un-inventory-badge">{inventoryStatusText}</span>
+            </div>
+        </div>
+    </article>
+</template>
