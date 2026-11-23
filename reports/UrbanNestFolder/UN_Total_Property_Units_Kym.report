@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Property_Unit__c$Name</field>
+    </columns>
+    <format>Tabular</format>
+    <name>UN – Total Property Units</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>property_unit__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Property_Unit__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

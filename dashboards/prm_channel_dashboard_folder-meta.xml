@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DashboardFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>projectpoc691_e4sin0lxcdfpg@gmail.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>admin-91vt7lrvi06w.l22z31ps8nsd.jvuicgh40hmf@gmail.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>pratheepkumar752@gmail.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>lin.uoaa3i9lr1gm.qog9l1jpphv8.216o5lipwcif.i93cfw0ra.p3sc6nm0kphi@gmail.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>trial.gsuczz7l2kke.uo4lnlqspxd0.up73kpqcf2kg.kw8zqrhhqjto.plcvt5ijxfqd@gmail.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>PRM Dashboards</name>
+</DashboardFolder>
