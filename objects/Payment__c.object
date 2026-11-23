@@ -226,20 +226,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Booking__c</fullName>
-        <description>Parent Booking sale agreement link.</description>
-        <label>Booking</label>
-        <referenceTo>Booking__c</referenceTo>
-        <relationshipLabel>Payments</relationshipLabel>
-        <relationshipName>Payments</relationshipName>
-        <relationshipOrder>0</relationshipOrder>
-        <reparentableMasterDetail>false</reparentableMasterDetail>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>MasterDetail</type>
-        <writeRequiresMasterRead>false</writeRequiresMasterRead>
-    </fields>
-    <fields>
         <fullName>Refund_ID__c</fullName>
         <externalId>false</externalId>
         <label>Refund ID</label>

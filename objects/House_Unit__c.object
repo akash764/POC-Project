@@ -354,19 +354,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Current_Booking__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>System maintained reference to the active booking Opportunity holding this unit. Restricted from public access.</description>
-        <label>Current Booking</label>
-        <referenceTo>Opportunity</referenceTo>
-        <relationshipLabel>Booked House Units</relationshipLabel>
-        <relationshipName>House_Units</relationshipName>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Possession_Date__c</fullName>
         <description>Estimated or confirmed key handover and possession date.</description>
         <label>Possession Date</label>
