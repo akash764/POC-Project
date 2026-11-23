@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Contact",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"050653b4-86ea-447e-a340-2582fcad0a36\",\"columns\":[{\"UUID\":\"acf80574-ddcc-4e91-85a0-f588b524595c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:unContactPage",
+              "id" : "1e0d8127-280d-4826-a063-a10b73107bbb",
+              "type" : "component"
+            } ],
+            "id" : "acf80574-ddcc-4e91-85a0-f588b524595c",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "050653b4-86ea-447e-a340-2582fcad0a36",
+          "type" : "component"
+        } ],
+        "id" : "03669d1b-ae77-42a0-be53-9902379f42e3",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Contact",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "0e1b924f-b4e8-4dac-9082-655d22ba3d80",
+          "type" : "component"
+        } ],
+        "id" : "abdccd00-da7b-4698-87de-f93781d455e0",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "5a39314e-a8d3-49bb-a3bb-fbcf0f9d0405",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-contact"
+  },
+  "urlName" : "contact"
+}

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Project Details",
+  "contentBody" : {
+    "activeViewId" : "Project_Details",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-project-details",
+    "urlPrefix" : "project-details"
+  },
+  "urlName" : "project-details"
+}

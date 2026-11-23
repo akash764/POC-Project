@@ -1,0 +1,71 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "About",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"80216222-1ddd-4ef0-83b1-bfc8c5f6d8c1\",\"columns\":[{\"UUID\":\"8d2bc4e1-4974-4b0c-8473-d8ac71a22a0a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "companyHeading" : "Architectural Vision Meets Engineering Precision",
+                "heroSubtitle" : "Discover our foundational values, uncompromising architectural philosophies, and fifteen-year legacy of creating benchmark residential communities.",
+                "heroTitle" : "Pioneering Excellence in Urban Living"
+              },
+              "definition" : "c:unAboutPage",
+              "id" : "48b64004-b63d-49ae-a37e-8f9773bdcf20",
+              "type" : "component"
+            } ],
+            "id" : "8d2bc4e1-4974-4b0c-8473-d8ac71a22a0a",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "80216222-1ddd-4ef0-83b1-bfc8c5f6d8c1",
+          "type" : "component"
+        } ],
+        "id" : "736915fa-f320-4c7b-a3e1-ba0b7c6b496f",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "About",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "7b2bd43e-5a57-4a7f-9a05-749e428e75b8",
+          "type" : "component"
+        } ],
+        "id" : "76457be5-3579-48c0-b975-1b1c1ad4b2fa",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "5a6cda6a-38f3-4a0d-ac4b-33356dd6b38f",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-about"
+  },
+  "urlName" : "about"
+}
