@@ -1,11 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Booking_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Booking_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Single source of truth for the property sale agreement, financial ledgers, and handover.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Booking</label>
+    <nameField>
+        <displayFormat>BK-{YYYY}-{0000}</displayFormat>
+        <label>Booking Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Bookings</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Property_Unit__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Booking_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Booking_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Final_Agreed_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Paid_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Balance_Due__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Property_Unit__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Booking_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Booking_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Final_Agreed_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Paid_Amount__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
     <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Legal owner / primary buyer.</description>
         <label>Primary Buyer</label>
         <referenceTo>Account</referenceTo>
+        <relationshipLabel>Bookings</relationshipLabel>
+        <relationshipName>Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Master project reference.</description>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
         <relationshipLabel>Bookings</relationshipLabel>
         <relationshipName>Bookings</relationshipName>
         <required>false</required>
@@ -27,6 +227,19 @@
         <type>Currency</type>
     </fields>
     <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Closes the sales pipeline.</description>
+        <label>Source Deal</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Bookings</relationshipLabel>
+        <relationshipName>Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Booking_Date__c</fullName>
         <description>Timestamp/Date of deposit.</description>
         <label>Date of Booking</label>
@@ -34,6 +247,72 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Property_Unit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Specific flat/villa allocated.</description>
+        <label>Booked Unit</label>
+        <referenceTo>Property_Unit__c</referenceTo>
+        <relationshipLabel>Bookings</relationshipLabel>
+        <relationshipName>Bookings</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Refund_Amount__c</fullName>
+        <description>Net amount to be refunded upon cancellation after deductions.</description>
+        <formula>MAX(0, Total_Paid_Amount__c - BLANKVALUE(Deduction_Amount__c, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Refund Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Refund_Status__c</fullName>
+        <description>Refund Status: Not Applicable, Pending Approval, Approved by Finance, Refund Processed, Refund Completed.</description>
+        <label>Refund Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>true</default>
+                    <label>Not Applicable</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved by Finance</fullName>
+                    <default>false</default>
+                    <label>Approved by Finance</label>
+                </value>
+                <value>
+                    <fullName>Refund Processed</fullName>
+                    <default>false</default>
+                    <label>Refund Processed</label>
+                </value>
+                <value>
+                    <fullName>Refund Completed</fullName>
+                    <default>false</default>
+                    <label>Refund Completed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>Booking_Status__c</fullName>
@@ -86,6 +365,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Deduction_Amount__c</fullName>
+        <description>Administrative cancellation charges deducted by developer (e.g. ₹50,000).</description>
+        <label>Deduction Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Cancellation_Date__c</fullName>
         <description>Timestamp when cancellation was requested.</description>
         <label>Cancellation Date</label>
@@ -93,6 +383,45 @@
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Total_Paid_Amount__c</fullName>
+        <description>Native SUM of child Payment__c.Amount__c where Status__c = &apos;Success&apos;.</description>
+        <label>Total Paid Amount</label>
+        <summarizedField>Payment__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Payment__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Success</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Payment__c.Booking__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Final_Agreed_Price__c</fullName>
+        <description>Contract value after agreed quote.</description>
+        <label>Final Sale Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Refund_Payment_Ref__c</fullName>
+        <description>Razorpay Refund ID (rfnd_xxx) or NEFT UTR number.</description>
+        <externalId>false</externalId>
+        <label>Refund Reference ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Cancellation_Reason__c</fullName>
@@ -133,134 +462,5 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
-    </fields>
-    <fields>
-        <fullName>Deduction_Amount__c</fullName>
-        <description>Administrative cancellation charges deducted by developer (e.g. ₹50,000).</description>
-        <label>Deduction Amount</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Final_Agreed_Price__c</fullName>
-        <description>Contract value after agreed quote.</description>
-        <label>Final Sale Price</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Opportunity__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Closes the sales pipeline.</description>
-        <label>Source Deal</label>
-        <referenceTo>Opportunity</referenceTo>
-        <relationshipLabel>Bookings</relationshipLabel>
-        <relationshipName>Bookings</relationshipName>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Property_Unit__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <description>Specific flat/villa allocated.</description>
-        <label>Booked Unit</label>
-        <referenceTo>Property_Unit__c</referenceTo>
-        <relationshipLabel>Bookings</relationshipLabel>
-        <relationshipName>Bookings</relationshipName>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Refund_Amount__c</fullName>
-        <description>Net amount to be refunded upon cancellation after deductions.</description>
-        <formula>MAX(0, Total_Paid_Amount__c - BLANKVALUE(Deduction_Amount__c, 0))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Net Refund Due</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Refund_Payment_Ref__c</fullName>
-        <description>Razorpay Refund ID (rfnd_xxx) or NEFT UTR number.</description>
-        <externalId>false</externalId>
-        <label>Refund Reference ID</label>
-        <length>100</length>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Refund_Status__c</fullName>
-        <description>Refund Status: Not Applicable, Pending Approval, Approved by Finance, Refund Processed, Refund Completed.</description>
-        <label>Refund Status</label>
-        <required>false</required>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Not Applicable</fullName>
-                    <default>true</default>
-                    <label>Not Applicable</label>
-                </value>
-                <value>
-                    <fullName>Pending Approval</fullName>
-                    <default>false</default>
-                    <label>Pending Approval</label>
-                </value>
-                <value>
-                    <fullName>Approved by Finance</fullName>
-                    <default>false</default>
-                    <label>Approved by Finance</label>
-                </value>
-                <value>
-                    <fullName>Refund Processed</fullName>
-                    <default>false</default>
-                    <label>Refund Processed</label>
-                </value>
-                <value>
-                    <fullName>Refund Completed</fullName>
-                    <default>false</default>
-                    <label>Refund Completed</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Total_Paid_Amount__c</fullName>
-        <description>Native SUM of child Payment__c.Amount__c where Status__c = &apos;Success&apos;.</description>
-        <label>Total Paid Amount</label>
-        <summarizedField>Payment__c.Amount__c</summarizedField>
-        <summaryFilterItems>
-            <field>Payment__c.Status__c</field>
-            <operation>equals</operation>
-            <value>Success</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Payment__c.Booking__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Summary</type>
     </fields>
 </CustomObject>

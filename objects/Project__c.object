@@ -1,66 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fields>
-        <fullName>Advance_Maintenance_Years__c</fullName>
-        <defaultValue>3</defaultValue>
-        <description>Number of years of advance maintenance (CAM) collected upfront at possession (industry standard is 3 years).</description>
-        <externalId>false</externalId>
-        <inlineHelpText>Number of years of advance maintenance collected at possession (default is 3).</inlineHelpText>
-        <label>Advance Maintenance (Years)</label>
-        <precision>2</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Amenities_Infrastructure_Charge__c</fullName>
-        <description>One-time clubhouse, lifestyle amenities, or commercial business infrastructure development fee.</description>
-        <inlineHelpText>Enter the one-time amenities/infrastructure charge applicable to units in this project.</inlineHelpText>
-        <label>Amenities &amp; Infrastructure Charge</label>
-        <precision>16</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Area_Locality__c</fullName>
-        <externalId>false</externalId>
-        <label>Area / Locality</label>
-        <length>150</length>
-        <required>false</required>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Project_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents a real estate development project under UrbanNest portfolio.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Project</label>
+    <nameField>
+        <label>Project Name</label>
         <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
         <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Brochure_Content_Key__c</fullName>
-        <description>Salesforce CMS Managed Content Key referencing the approved hero/brochure media.</description>
-        <externalId>false</externalId>
-        <label>Brochure Content Key</label>
-        <length>255</length>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Budget__c</fullName>
-        <description>Internal financial budget for the project. Restricted to Finance and Management roles only.</description>
-        <label>Budget</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
+    </nameField>
+    <pluralLabel>Projects</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Project_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Area_Locality__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Phases__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Apartments__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
     <fields>
         <fullName>City__c</fullName>
         <description>City where the project is located. Used for public portal search/filtering.</description>
@@ -72,76 +189,6 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>End_Date__c</fullName>
-        <description>Project planned or actual completion date.</description>
-        <label>End Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Maintenance_Rate_Per_SqFt__c</fullName>
-        <description>Monthly Common Area Maintenance (CAM) rate per square foot for facility upkeep.</description>
-        <inlineHelpText>Monthly CAM rate per sq.ft (e.g. ₹5.00 for residential, ₹15.00 for commercial).</inlineHelpText>
-        <label>Maintenance Rate Per Sq.Ft (Monthly)</label>
-        <precision>10</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>true</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Project_Type__c</fullName>
-        <description>Classification of the real estate development.</description>
-        <label>Project Type</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Residential_Apartment</fullName>
-                    <default>true</default>
-                    <label>Apartment</label>
-                </value>
-                <value>
-                    <fullName>Residential_Villa</fullName>
-                    <default>false</default>
-                    <label>Villa</label>
-                </value>
-                <value>
-                    <fullName>Commercial</fullName>
-                    <default>false</default>
-                    <label>Commercial</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Public_Description__c</fullName>
-        <description>Public-facing marketing and architectural overview displayed on Experience Cloud.</description>
-        <label>Public Description</label>
-        <length>32768</length>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>LongTextArea</type>
-        <visibleLines>5</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Start_Date__c</fullName>
-        <description>Project initiation or construction start date.</description>
-        <label>Start Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <fields>
         <fullName>State__c</fullName>
@@ -365,6 +412,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Budget__c</fullName>
+        <description>Internal financial budget for the project. Restricted to Finance and Management roles only.</description>
+        <label>Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <description>Lifecycle status of the real estate project.</description>
         <label>Status</label>
@@ -405,6 +463,15 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Project planned or actual completion date.</description>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Strengths__c</fullName>
         <description>Key strengths, amenities, and USPs of the project displayed on public brochures.</description>
         <label>Strengths</label>
@@ -413,6 +480,66 @@
         <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Project initiation or construction start date.</description>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Type__c</fullName>
+        <description>Classification of the real estate development.</description>
+        <label>Project Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Residential_Apartment</fullName>
+                    <default>true</default>
+                    <label>Apartment</label>
+                </value>
+                <value>
+                    <fullName>Residential_Villa</fullName>
+                    <default>false</default>
+                    <label>Villa</label>
+                </value>
+                <value>
+                    <fullName>Commercial</fullName>
+                    <default>false</default>
+                    <label>Commercial</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Phases__c</fullName>
+        <description>Auto-calculated roll-up summary count of child Phase records.</description>
+        <label>Total Phases</label>
+        <summaryForeignKey>Phase__c.Project__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Area_Locality__c</fullName>
+        <externalId>false</externalId>
+        <label>Area / Locality</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Total_Apartments__c</fullName>
@@ -425,14 +552,65 @@
         <type>Summary</type>
     </fields>
     <fields>
-        <fullName>Total_Phases__c</fullName>
-        <description>Auto-calculated roll-up summary count of child Phase records.</description>
-        <label>Total Phases</label>
-        <summaryForeignKey>Phase__c.Project__c</summaryForeignKey>
-        <summaryOperation>count</summaryOperation>
+        <fullName>Public_Description__c</fullName>
+        <description>Public-facing marketing and architectural overview displayed on Experience Cloud.</description>
+        <label>Public Description</label>
+        <length>32768</length>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Summary</type>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Brochure_Content_Key__c</fullName>
+        <description>Salesforce CMS Managed Content Key referencing the approved hero/brochure media.</description>
+        <externalId>false</externalId>
+        <label>Brochure Content Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Advance_Maintenance_Years__c</fullName>
+        <defaultValue>3</defaultValue>
+        <description>Number of years of advance maintenance (CAM) collected upfront at possession (industry standard is 3 years).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of years of advance maintenance collected at possession (default is 3).</inlineHelpText>
+        <label>Advance Maintenance (Years)</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Maintenance_Rate_Per_SqFt__c</fullName>
+        <description>Monthly Common Area Maintenance (CAM) rate per square foot for facility upkeep.</description>
+        <inlineHelpText>Monthly CAM rate per sq.ft (e.g. ₹5.00 for residential, ₹15.00 for commercial).</inlineHelpText>
+        <label>Maintenance Rate Per Sq.Ft (Monthly)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amenities_Infrastructure_Charge__c</fullName>
+        <description>One-time clubhouse, lifestyle amenities, or commercial business infrastructure development fee.</description>
+        <inlineHelpText>Enter the one-time amenities/infrastructure charge applicable to units in this project.</inlineHelpText>
+        <label>Amenities &amp; Infrastructure Charge</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
     </fields>
     <validationRules>
         <fullName>Budget_Nonnegative</fullName>
