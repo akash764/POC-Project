@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>UrbanNest About Page</masterLabel>
+    <description>Brand heritage, mission, vision, and engineering standards page.</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="heroTitle" type="String" label="Hero Title" default="Pioneering Excellence in Urban Living"/>
+            <property name="heroSubtitle" type="String" label="Hero Subtitle" default="Discover our foundational values, uncompromising architectural philosophies, and fifteen-year legacy of creating benchmark residential communities."/>
+            <property name="companyHeading" type="String" label="Company Heading" default="Architectural Vision Meets Engineering Precision"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

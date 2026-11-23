@@ -1,0 +1,334 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.un-details-page {
+    width: 100%;
+    padding-bottom: 5rem;
+    background-color: #faf7f2;
+}
+
+.un-content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Header */
+.un-project-hero {
+    background-color: #0b2545;
+    color: #ffffff;
+    padding: 2.5rem 0 3.5rem;
+    border-bottom: 1px solid rgba(208, 155, 62, 0.35);
+    margin-bottom: 3rem;
+}
+
+.un-breadcrumb {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+.un-breadcrumb a {
+    color: #d09b3e;
+    text-decoration: none;
+}
+
+.un-hero-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.un-project-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0.5rem 0 0.5rem;
+    line-height: 1.15;
+}
+
+.un-project-geo {
+    font-size: 1.05rem;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.un-hero-pricing {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.un-price-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.un-price-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #d09b3e;
+}
+
+.un-price-bhk {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.un-badge {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.un-badge-active {
+    background-color: #2b5d46;
+    color: #ffffff;
+}
+
+.un-badge-plan {
+    background-color: #d09b3e;
+    color: #0b2545;
+}
+
+.un-badge-closed {
+    background-color: #475569;
+    color: #ffffff;
+}
+
+/* Two Column Layout */
+.un-details-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.un-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.un-sidebar-col {
+    position: sticky;
+    top: 6rem;
+}
+
+.un-card-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 4px 20px rgba(11, 37, 69, 0.05);
+    border: 1px solid #e5dfd5;
+}
+
+.un-section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.un-section-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0b2545;
+    margin: 0 0 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.un-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #d09b3e;
+}
+
+.un-section-hint {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.un-count-pill {
+    background: rgba(208, 155, 62, 0.15);
+    color: #b8852d;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    border: 1px solid rgba(208, 155, 62, 0.4);
+}
+
+.un-project-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 1.5rem;
+}
+
+.un-strengths-box {
+    background-color: #faf7f2;
+    border-left: 4px solid #d09b3e;
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.un-strengths-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0b2545;
+    margin: 0 0 1rem;
+}
+
+.un-strengths-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+.un-strengths-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #1e293b;
+}
+
+.un-strength-check {
+    color: #2b5d46;
+    font-weight: 800;
+}
+
+/* Curated Amenities Grid & Cards */
+.un-amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.un-amenity-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(11, 37, 69, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.un-amenity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(11, 37, 69, 0.12);
+}
+
+.un-amenity-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    background: #0b2545;
+    overflow: hidden;
+}
+
+.un-amenity-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.un-amenity-card:hover .un-amenity-image {
+    transform: scale(1.05);
+}
+
+.un-amenity-featured-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #d09b3e;
+    color: #0b2545;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.un-amenity-type-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(11, 37, 69, 0.85);
+    backdrop-filter: blur(4px);
+    color: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.un-amenity-body {
+    padding: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.un-amenity-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0b2545;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+}
+
+.un-amenity-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .un-details-layout {
+        grid-template-columns: 1fr;
+    }
+    .un-sidebar-col {
+        position: static;
+        order: -1;
+    }
+}

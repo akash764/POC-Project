@@ -1,0 +1,43 @@
+:host {
+    display: block;
+    margin: 2.5rem 0;
+}
+
+.un-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.un-page-btn {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0b2545;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.un-page-btn:hover:not(:disabled) {
+    background-color: #0b2545;
+    border-color: #0b2545;
+    color: #ffffff;
+}
+
+.un-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.un-page-info {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.un-page-info strong {
+    color: #0b2545;
+}

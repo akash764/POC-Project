@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Handles new UrbanNest Leads with Location Preference = Chennai.</description>
+    <doesIncludeBosses>true</doesIncludeBosses>
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>balavignesh305@gmail.com</email>
+    <name>Chennai_Sales_Queue</name>
+    <queueMembers>
+        <users>
+            <user>manikusha02@urbannest.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

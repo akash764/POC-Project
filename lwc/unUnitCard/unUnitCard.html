@@ -1,0 +1,91 @@
+<template>
+    <div class="un-unit-card">
+        <!-- Card Top Bar: Unit Number, BHK or Type Badge, and Status -->
+        <div class="un-unit-header">
+            <div>
+                <span class="un-unit-number">{unit.unitNumber}</span>
+                <template if:true={displayBhk}>
+                    <span class="un-unit-bhk">{displayBhk}</span>
+                </template>
+                <template if:false={displayBhk}>
+                    <span class="un-unit-bhk un-commercial-bhk">{displayType}</span>
+                </template>
+            </div>
+            <span class={statusBadgeClass}>{unit.status}</span>
+        </div>
+
+        <!-- Price display -->
+        <div class="un-unit-price-box">
+            <span class="un-unit-price-lbl">Offering Price</span>
+            <span class="un-unit-price">{formattedPrice}</span>
+        </div>
+
+        <!-- Specifications Grid -->
+        <div class="un-unit-specs">
+            <!-- Floor (For Apartment & Commercial) -->
+            <template if:true={isApartmentOrCommercial}>
+                <div class="un-spec-item">
+                    <span class="un-spec-lbl">Floor</span>
+                    <span class="un-spec-val">{floorLabel}</span>
+                </div>
+            </template>
+
+            <!-- Plot Area (Prominent for Villas) -->
+            <template if:true={isVilla}>
+                <div class="un-spec-item">
+                    <span class="un-spec-lbl">Plot Area</span>
+                    <span class="un-spec-val">{unit.plotArea} sq.ft.</span>
+                </div>
+            </template>
+
+            <!-- Carpet / Built-up Area -->
+            <div class="un-spec-item">
+                <span class="un-spec-lbl">{areaLabel}</span>
+                <span class="un-spec-val">{areaValue} sq.ft.</span>
+            </div>
+
+            <!-- Facing -->
+            <template if:true={unit.facing}>
+                <div class="un-spec-item">
+                    <span class="un-spec-lbl">Facing</span>
+                    <span class="un-spec-val">{unit.facing}</span>
+                </div>
+            </template>
+
+            <!-- Restrooms / Baths -->
+            <template if:true={unit.bathrooms}>
+                <div class="un-spec-item">
+                    <span class="un-spec-lbl">{bathsLabel}</span>
+                    <span class="un-spec-val">{unit.bathrooms}</span>
+                </div>
+            </template>
+
+            <!-- Furnishing Status -->
+            <template if:true={unit.furnishingStatus}>
+                <div class="un-spec-item">
+                    <span class="un-spec-lbl">Fit-Out / Furnishing</span>
+                    <span class="un-spec-val">{unit.furnishingStatus}</span>
+                </div>
+            </template>
+
+            <!-- Car Parking -->
+            <div class="un-spec-item">
+                <span class="un-spec-lbl">Parking</span>
+                <span class="un-spec-val">{parkingText}</span>
+            </div>
+
+            <!-- Possession -->
+            <div class="un-spec-item">
+                <span class="un-spec-lbl">Possession</span>
+                <span class="un-spec-val">{formattedPossessionDate}</span>
+            </div>
+        </div>
+
+        <!-- Action: Enquire About Unit -->
+        <div class="un-unit-action">
+            <button class="un-btn-unit-enquire" onclick={handleUnitEnquire} aria-label="Enquire about this specific unit">
+                Enquire for Unit
+            </button>
+        </div>
+    </div>
+</template>

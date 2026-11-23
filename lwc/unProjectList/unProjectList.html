@@ -1,0 +1,40 @@
+<template>
+    <div class="un-project-list-wrapper">
+        <template if:true={isLoading}>
+            <c-un-loading-spinner message="Loading UrbanNest projects..."></c-un-loading-spinner>
+        </template>
+
+        <template if:false={isLoading}>
+            <template if:true={hasError}>
+                <c-un-error-message
+                    message={errorMessage}
+                    allow-retry="true"
+                    onretry={handleRetry}>
+                </c-un-error-message>
+            </template>
+
+            <template if:false={hasError}>
+                <template if:true={hasProjects}>
+                    <div class="un-projects-grid">
+                        <template for:each={projects} for:item="proj">
+                            <c-un-project-card
+                                key={proj.id}
+                                project={proj}
+                                onviewdetails={handleProjectSelect}
+                                onenquire={handleProjectEnquire}>
+                            </c-un-project-card>
+                        </template>
+                    </div>
+                </template>
+
+                <template if:false={hasProjects}>
+                    <c-un-empty-state
+                        title="No Projects Available"
+                        description="There are currently no projects matching your search parameters. Try choosing a different city or clearing your filters."
+                        onaction={handleReset}>
+                    </c-un-empty-state>
+                </template>
+            </template>
+        </template>
+    </div>
+</template>

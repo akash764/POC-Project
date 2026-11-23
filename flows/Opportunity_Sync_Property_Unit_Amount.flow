@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Opportunity_Amounts</name>
+        <label>Assign Opportunity Amounts</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Base_Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Property_Unit.Price__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Amenities_Charge__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Property_Unit.Amenities_Charge__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Advance_Maintenance_Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Property_Unit.Advance_Maintenance_Amount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Amount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_Total_Amount</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_If_Unit_Selected</name>
+        <label>Check If Unit Selected</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No Sync Needed</defaultConnectorLabel>
+        <rules>
+            <name>Unit_Selected_Or_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Formula_Should_Sync</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Property_Unit</targetReference>
+            </connector>
+            <label>Unit Selected or Changed</label>
+        </rules>
+    </decisions>
+    <description>Automatically populates Opportunity Amount and pricing breakdown fields (Base Price, Amenities Charge, Advance Maintenance Amount) when a Property Unit is selected or changed.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_Should_Sync</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISBLANK({!$Record.Property_Unit__c})) &amp;&amp; (ISNEW() || ISBLANK({!$Record.Amount}) || {!$Record.Property_Unit__c} != {!$Record__Prior.Property_Unit__c})</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Total_Amount</name>
+        <dataType>Currency</dataType>
+        <expression>IF(BLANKVALUE({!Get_Property_Unit.Total_All_Inclusive_Price__c}, 0) &gt; 0, {!Get_Property_Unit.Total_All_Inclusive_Price__c}, {!Get_Property_Unit.Price__c})</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Opportunity: Sync Property Unit Amount {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: Sync Property Unit Amount</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Property_Unit</name>
+        <label>Get Property Unit</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Opportunity_Amounts</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Property_Unit__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Property_Unit__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_If_Unit_Selected</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

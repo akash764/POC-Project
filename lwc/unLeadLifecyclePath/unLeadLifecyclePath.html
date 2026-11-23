@@ -1,0 +1,94 @@
+<template>
+    <div class="slds-card slds-p-vertical_xx-small slds-p-horizontal_small path-card">
+        <div class="slds-grid slds-grid_vertical-align-center">
+            
+            <!-- Left Scroller / Arrow Icon -->
+            <div class="slds-p-right_x-small">
+                <div class="slds-path__scroll-button-container">
+                    <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-path__trigger-button" title="Lead Stages" disabled>
+                        <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Path Chevrons Navigation -->
+            <div class="slds-col slds-path">
+                <div class="slds-grid slds-path__track">
+                    <div class="slds-grid slds-path__scroller-container">
+                        <div class="slds-path__scroller">
+                            <div class="slds-path__scroller_inner">
+                                <ul class="slds-path__nav" role="menubar" aria-orientation="horizontal">
+                                    <template for:each={formattedStages} for:item="stage">
+                                        <li key={stage.apiName} class={stage.cssClass} role="presentation">
+                                            <a aria-selected={stage.isSelected} 
+                                               class="slds-path__link" 
+                                               href="javascript:void(0);" 
+                                               role="menuitem" 
+                                               tabindex="0" 
+                                               data-value={stage.apiName} 
+                                               onclick={handleStageClick}
+                                               title={stage.label}>
+                                                <span class="slds-path__stage">
+                                                    <lightning-icon icon-name="utility:check" size="x-small" variant={stage.iconVariant}></lightning-icon>
+                                                </span>
+                                                <span class="slds-path__title">{stage.label}</span>
+                                            </a>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Button on Right -->
+            <div class="slds-p-left_medium slds-shrink-none">
+                <button class="slds-button slds-button_brand path-action-pill" 
+                        onclick={handleActionClick} 
+                        disabled={isActionDisabled}>
+                    {actionButtonLabel}
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Convert Lead Flow Modal -->
+    <template if:true={showConvertModal}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container">
+                
+                <!-- Visible Header with Close [X] -->
+                <header class="slds-modal__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center" style="padding: 12px 20px;">
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate" style="color: #0176D3; font-weight: 700; font-size: 1.25rem;">
+                        Convert Lead
+                    </h2>
+                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" title="Close" onclick={handleCloseModal} style="border-radius: 4px;">
+                        <lightning-icon icon-name="utility:close" alternative-text="Close" size="x-small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </header>
+
+                <!-- Large, Un-squeezed Flow Content -->
+                <div class="slds-modal__content slds-p-around_medium modal-flow-content">
+                    <lightning-flow 
+                        flow-api-name="Convert_Lead_Screen_Flow" 
+                        flow-input-variables={flowInputVariables} 
+                        onstatuschange={handleFlowStatusChange}>
+                    </lightning-flow>
+                </div>
+
+                <!-- Modal Footer with Cancel Button -->
+                <footer class="slds-modal__footer slds-grid slds-grid_align-spread slds-grid_vertical-align-center" style="padding: 10px 20px;">
+                    <span class="slds-text-body_small slds-text-color_weak">UrbanNest Real Estate • Guided Conversion</span>
+                    <button class="slds-button slds-button_neutral" onclick={handleCloseModal} style="font-weight: 600; padding: 0 20px; height: 34px;">
+                        Cancel
+                    </button>
+                </footer>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

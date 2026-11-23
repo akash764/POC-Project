@@ -1,0 +1,90 @@
+:host {
+    display: block;
+    height: 100%;
+}
+
+.un-contact-card {
+    background: #0b2545;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(11, 37, 69, 0.25);
+    border: 1px solid rgba(208, 155, 62, 0.4);
+    height: 100%;
+}
+
+.un-contact-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1rem;
+}
+
+.un-contact-intro {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(208, 155, 62, 0.25);
+    padding-bottom: 1.5rem;
+}
+
+.un-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.un-info-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.un-info-icon {
+    font-size: 1.5rem;
+    background: rgba(208, 155, 62, 0.15);
+    border: 1px solid rgba(208, 155, 62, 0.4);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.un-info-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #d09b3e;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+.un-info-val,
+.un-info-value {
+    font-size: 1rem;
+    color: #f8fafc;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.un-contact-link {
+    color: #f8fafc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.un-contact-link:hover {
+    color: #d09b3e;
+    text-decoration: underline;
+}
+
+.un-info-note {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}

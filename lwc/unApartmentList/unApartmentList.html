@@ -1,0 +1,14 @@
+<template>
+    <div class="un-apt-list-wrapper">
+        <div class="un-apt-grid">
+            <template for:each={apartmentItems} for:item="apt">
+                <c-un-apartment-card
+                    key={apt.id}
+                    apartment={apt}
+                    is-selected={apt.isSelected}
+                    onselect={handleApartmentSelect}>
+                </c-un-apartment-card>
+            </template>
+        </div>
+    </div>
+</template>

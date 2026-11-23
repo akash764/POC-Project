@@ -1,0 +1,166 @@
+<template>
+    <div class="un-details-page">
+        <template if:true={isLoading}>
+            <c-un-loading-spinner message="Loading project specifications..."></c-un-loading-spinner>
+        </template>
+
+        <template if:false={isLoading}>
+            <!-- Hero Breadcrumb & Header Banner -->
+            <div class="un-project-hero">
+                <div class="un-content-container">
+                    <nav class="un-breadcrumb" aria-label="Breadcrumb">
+                        <a href="./">Home</a> &gt;
+                        <a href="./properties">Properties</a> &gt;
+                        <span>{project.name}</span>
+                    </nav>
+
+                    <div class="un-hero-header-flex">
+                        <div>
+                            <span class={statusBadgeClass}>{project.status}</span>
+                            <h1 class="un-project-name">{project.name}</h1>
+                            <p class="un-project-geo">
+                                <span>📍</span> {project.city}, {project.state}
+                            </p>
+                        </div>
+                        <div class="un-hero-pricing">
+                            <span class="un-price-label">Starting Price</span>
+                            <span class="un-price-value">{formattedStartingPrice}</span>
+                            <span class="un-price-bhk">{formattedBhkList}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Layout: 2 Column (Content + Sticky Enquiry Sidebar) -->
+            <div class="un-content-container">
+                <div class="un-details-layout">
+                    <!-- Left Primary Column -->
+                    <div class="un-main-col">
+                        <!-- 1. Architectural Gallery Showcase -->
+                        <section class="un-card-section">
+                            <h2 class="un-section-title">Architectural Gallery</h2>
+                            <c-un-project-gallery
+                                brochure-content-key={project.brochureContentKey}
+                                project-name={project.name}
+                                amenities={project.amenities}>
+                            </c-un-project-gallery>
+                        </section>
+
+                        <!-- 2. Project Overview & Public Description -->
+                        <section class="un-card-section">
+                            <h2 class="un-section-title">About {project.name}</h2>
+                            <p class="un-project-description">
+                                {project.publicDescription}
+                            </p>
+
+                            <!-- Project Key Strengths -->
+                            <template if:true={hasStrengths}>
+                                <div class="un-strengths-box">
+                                    <h4 class="un-strengths-title">Project Strengths &amp; Highlights</h4>
+                                    <ul class="un-strengths-list">
+                                        <template for:each={strengthItems} for:item="item">
+                                            <li key={item}>
+                                                <span class="un-strength-check">✓</span>
+                                                <span>{item}</span>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </template>
+                        </section>
+
+                        <!-- 3. Dedicated Project Amenities (Dynamically renders exact configured count) -->
+                        <template if:true={hasAmenities}>
+                            <section class="un-card-section" id="amenities-section">
+                                <div class="un-section-title-row">
+                                    <h2 class="un-section-title">{amenitiesSectionTitle}</h2>
+                                    <span class="un-count-pill">{amenitiesCountPill}</span>
+                                </div>
+                                <p class="un-section-hint">
+                                    {amenitiesSectionHint}
+                                </p>
+
+                                <div class="un-amenities-grid">
+                                    <template for:each={amenityList} for:item="amenity">
+                                        <div key={amenity.id} class="un-amenity-card">
+                                            <div class="un-amenity-image-wrapper">
+                                                <img src={amenity.imageUrl} alt={amenity.name} class="un-amenity-image" loading="lazy" />
+                                                <template if:true={amenity.isFeatured}>
+                                                    <span class="un-amenity-featured-badge">★ Featured</span>
+                                                </template>
+                                                <span class="un-amenity-type-badge">{amenity.icon} {amenity.amenityType}</span>
+                                            </div>
+                                            <div class="un-amenity-body">
+                                                <h3 class="un-amenity-name">{amenity.name}</h3>
+                                                <template if:true={amenity.description}>
+                                                    <p class="un-amenity-desc">{amenity.description}</p>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </section>
+                        </template>
+
+                        <!-- 3. Phases / Enclaves / Towers Hierarchy -->
+                        <section class="un-card-section" id="blocks-section">
+                            <div class="un-section-title-row">
+                                <h2 class="un-section-title">{phasesSectionTitle}</h2>
+                                <span class="un-count-pill">{phasesCountPill}</span>
+                            </div>
+                            <p class="un-section-hint">
+                                {phasesSectionHint}
+                            </p>
+
+                            <c-un-apartment-list
+                                apartments={project.apartments}
+                                selected-apartment-id={selectedApartmentId}
+                                onapartmentchange={handleApartmentChange}>
+                            </c-un-apartment-list>
+                        </section>
+
+                        <!-- 4. Units / Properties Matrix -->
+                        <section class="un-card-section" id="units-section">
+                            <div class="un-section-title-row">
+                                <div>
+                                    <h2 class="un-section-title">{unitsSectionTitle}</h2>
+                                    <span class="un-section-hint">
+                                        Live verified inventory. Only Available and Under Offer residences are displayed.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <c-un-unit-list
+                                units={activeUnits}
+                                onunitenquire={handleUnitEnquire}>
+                            </c-un-unit-list>
+                        </section>
+
+                        <!-- 5. Verified Customer & Visitor Reviews -->
+                        <section class="un-card-section" id="reviews-section">
+                            <c-un-project-reviews
+                                project-id={projectIdForReviews}
+                                project-name={project.name}>
+                            </c-un-project-reviews>
+                        </section>
+                    </div>
+
+                    <!-- Right Sticky Sidebar: Preselected Enquiry Form -->
+                    <aside class="un-sidebar-col">
+                        <div class="un-sticky-form-wrapper">
+                            <c-un-enquiry-form
+                                preselected-project-id={project.id}
+                                preselected-project-name={project.name}
+                                preselected-bhk={selectedUnitBhk}
+                                preselected-budget={selectedUnitPrice}
+                                preselected-unit-number={selectedUnitNumber}
+                                form-title={enquiryTitle}
+                                form-subtitle="Receive verified floor layouts, cost sheets, and construction status.">
+                            </c-un-enquiry-form>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

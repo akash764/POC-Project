@@ -1,0 +1,10 @@
+<template>
+    <div class="un-error-container" role="alert">
+        <div class="un-error-icon">⚠️</div>
+        <h4 class="un-error-title">{title}</h4>
+        <p class="un-error-message">{message}</p>
+        <template if:true={allowRetry}>
+            <button class="un-retry-btn" onclick={handleRetry}>Try Again</button>
+        </template>
+    </div>
+</template>

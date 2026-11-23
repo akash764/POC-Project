@@ -1,0 +1,239 @@
+<template>
+    <section class="un-project-reviews-section" id="customer-reviews">
+        <div class="un-reviews-container">
+            <!-- Header & Score Summary -->
+            <div class="un-reviews-header">
+                <div class="un-header-left">
+                    <div class="un-eyebrow-tag">
+                        <span class="un-tag-dot"></span>
+                        <span>VERIFIED REVIEWS &amp; RATINGS</span>
+                    </div>
+                    <h2 class="un-title">Visitor &amp; Homeowner Experiences</h2>
+                    <p class="un-subtitle">
+                        Read authentic reviews from families who visited or purchased at {projectName}.
+                    </p>
+                </div>
+
+                <div class="un-header-right">
+                    <!-- Rating Summary Badge -->
+                    <div class="un-rating-summary-card">
+                        <template if:true={hasReviews}>
+                            <div class="un-score-box">
+                                <span class="un-score-number">{formattedAverageRating}</span>
+                                <div class="un-stars-display" aria-label="Average Rating">
+                                    <span class="un-gold-star">★</span>
+                                    <span class="un-gold-star">★</span>
+                                    <span class="un-gold-star">★</span>
+                                    <span class="un-gold-star">★</span>
+                                    <span class="un-gold-star">★</span>
+                                </div>
+                                <span class="un-review-count">{reviewCountText}</span>
+                            </div>
+                        </template>
+                        <template if:false={hasReviews}>
+                            <div class="un-score-box">
+                                <span class="un-score-new-tag">⭐ NEW PROPERTY</span>
+                                <span class="un-review-count">No ratings yet</span>
+                            </div>
+                        </template>
+
+                        <button class="un-btn-write-review" onclick={handleOpenModal}>
+                            <span>✍️ Write a Review</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <template if:true={isLoading}>
+                <div class="un-loading-box">
+                    <div class="un-spinner"></div>
+                    <p>Loading verified reviews...</p>
+                </div>
+            </template>
+
+            <!-- Reviews Grid -->
+            <template if:false={isLoading}>
+                <template if:true={hasReviews}>
+                    <div class="un-reviews-grid">
+                        <template for:each={reviewList} for:item="rev">
+                            <div key={rev.id} class="un-review-card">
+                                <div class="un-card-top">
+                                    <div class="un-user-profile">
+                                        <div class="un-avatar">
+                                            {rev.initials}
+                                        </div>
+                                        <div class="un-user-details">
+                                            <div class="un-name-row">
+                                                <h4 class="un-user-name">{rev.reviewerName}</h4>
+                                                <template if:true={rev.isVerifiedVisitor}>
+                                                    <span class="un-badge-verified">✓ Verified Visitor</span>
+                                                </template>
+                                            </div>
+                                            <p class="un-user-sub">
+                                                {rev.customerLocation} • {rev.formattedDate}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="un-review-rating">
+                                        <template for:each={rev.stars} for:item="star">
+                                            <span key={star.id} class="un-card-star">★</span>
+                                        </template>
+                                    </div>
+                                </div>
+
+                                <div class="un-card-body">
+                                    <template if:true={rev.reviewTitle}>
+                                        <h5 class="un-review-title">{rev.reviewTitle}</h5>
+                                    </template>
+                                    <p class="un-review-text">{rev.feedback}</p>
+                                </div>
+
+                                <template if:true={rev.unitPurchased}>
+                                    <div class="un-card-footer">
+                                        <span class="un-unit-badge">🏡 {rev.unitPurchased}</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <template if:false={hasReviews}>
+                    <div class="un-empty-reviews-box">
+                        <div class="un-empty-icon">🏡</div>
+                        <h3 class="un-empty-title">Be the first to review {projectName}!</h3>
+                        <p class="un-empty-sub">
+                            Have you visited {projectName} or explored its model homes? Share your authentic walkthrough experience with fellow home seekers.
+                        </p>
+                        <button class="un-btn-write-review-empty" onclick={handleOpenModal}>
+                            <span>✍️ Share Your Experience</span>
+                        </button>
+                    </div>
+                </template>
+            </template>
+        </div>
+
+        <!-- Write a Review Modal -->
+        <template if:true={isModalOpen}>
+            <div class="un-modal-overlay" onclick={handleCloseModal}>
+                <div class="un-modal-content" onclick={handleModalClick}>
+                    <div class="un-modal-header">
+                        <div>
+                            <h3 class="un-modal-title">Share Your Experience</h3>
+                            <p class="un-modal-subtitle">Touring or bought at {projectName}? Your review helps future buyers.</p>
+                        </div>
+                        <button class="un-modal-close" onclick={handleCloseModal} aria-label="Close modal">&times;</button>
+                    </div>
+
+                    <!-- Submission Success Confirmation -->
+                    <template if:true={isSubmitted}>
+                        <div class="un-submission-success">
+                            <div class="un-success-check">✓</div>
+                            <h4>Thank You For Your Review!</h4>
+                            <p>{submitSuccessMessage}</p>
+                            <button class="un-btn-done" onclick={handleCloseModal}>Done</button>
+                        </div>
+                    </template>
+
+                    <!-- Review Form -->
+                    <template if:false={isSubmitted}>
+                        <form onsubmit={handleSubmitReview} class="un-review-form">
+                            <!-- Star Rating Selector -->
+                            <div class="un-form-field">
+                                <label class="un-field-label">Overall Experience Rating <span class="req">*</span></label>
+                                <div class="un-star-picker" role="radiogroup">
+                                    <template for:each={starPickerOptions} for:item="st">
+                                        <button
+                                            type="button"
+                                            key={st.value}
+                                            class={st.cssClass}
+                                            data-val={st.value}
+                                            onclick={handleSelectRating}
+                                            title={st.label}>
+                                            ★
+                                        </button>
+                                    </template>
+                                    <span class="un-selected-rating-label">{selectedRatingLabel}</span>
+                                </div>
+                            </div>
+
+                            <div class="un-form-row">
+                                <div class="un-form-field">
+                                    <label class="un-field-label" for="rev-name">Your Full Name <span class="req">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="rev-name"
+                                        class="un-form-input"
+                                        placeholder="e.g. Ramesh Kumar"
+                                        value={formName}
+                                        oninput={handleNameChange}
+                                        required
+                                    />
+                                    <template if:true={formErrors.name}>
+                                        <span class="un-error-hint">{formErrors.name}</span>
+                                    </template>
+                                </div>
+
+                                <div class="un-form-field">
+                                    <label class="un-field-label" for="rev-location">Your City / Region</label>
+                                    <input
+                                        type="text"
+                                        id="rev-location"
+                                        class="un-form-input"
+                                        placeholder="e.g. Chennai, OMR"
+                                        value={formLocation}
+                                        oninput={handleLocationChange}
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="un-form-field">
+                                <label class="un-field-label" for="rev-title">Review Headline</label>
+                                <input
+                                    type="text"
+                                    id="rev-title"
+                                    class="un-form-input"
+                                    placeholder="e.g. Impressed with the construction quality and amenities"
+                                    value={formTitle}
+                                    oninput={handleTitleChange}
+                                />
+                            </div>
+
+                            <div class="un-form-field">
+                                <label class="un-field-label" for="rev-feedback">Your Experience / Review <span class="req">*</span></label>
+                                <textarea
+                                    id="rev-feedback"
+                                    class="un-form-textarea"
+                                    rows="4"
+                                    placeholder="Share details about the site walkthrough, model house, location convenience, or staff hospitality..."
+                                    value={formFeedback}
+                                    oninput={handleFeedbackChange}
+                                    required>
+                                </textarea>
+                                <template if:true={formErrors.feedback}>
+                                    <span class="un-error-hint">{formErrors.feedback}</span>
+                                </template>
+                            </div>
+
+                            <template if:true={serverErrorMessage}>
+                                <div class="un-server-error-box">
+                                    {serverErrorMessage}
+                                </div>
+                            </template>
+
+                            <div class="un-modal-actions">
+                                <button type="button" class="un-btn-cancel" onclick={handleCloseModal}>Cancel</button>
+                                <button type="submit" class="un-btn-submit-review" disabled={isSubmitting}>
+                                    <template if:true={isSubmitting}>Submitting...</template>
+                                    <template if:false={isSubmitting}>Submit Review</template>
+                                </button>
+                            </div>
+                        </form>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </section>
+</template>

@@ -1,0 +1,49 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.un-empty-container {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+    margin: 2rem 0;
+}
+
+.un-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.un-empty-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.4rem;
+    color: #0b2545;
+    margin-bottom: 0.75rem;
+}
+
+.un-empty-description {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+.un-empty-btn {
+    background-color: #0b2545;
+    color: #d09b3e;
+    border: 1px solid #d09b3e;
+    padding: 0.65rem 1.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.un-empty-btn:hover {
+    background-color: #d09b3e;
+    color: #0b2545;
+}

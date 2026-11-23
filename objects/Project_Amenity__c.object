@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores dedicated project amenities with CMS image keys and descriptions.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Project Amenity</label>
+    <nameField>
+        <label>Amenity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Amenities</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amenity_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Is_Featured__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Display_Order__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Photo_Content_Key__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>Project__c</fullName>
+        <description>Parent Project to which this amenity belongs.</description>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Project Amenities</relationshipLabel>
+        <relationshipName>Project_Amenities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Public description and key features of this amenity.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe this amenity for website visitors.</inlineHelpText>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Featured__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check to prominently showcase this amenity as a top highlight.</description>
+        <inlineHelpText>Highlight this amenity on the project overview.</inlineHelpText>
+        <label>Is Featured</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Amenity_Type__c</fullName>
+        <description>Categorization of the amenity.</description>
+        <label>Amenity Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Swimming Pool</fullName>
+                    <default>false</default>
+                    <label>Swimming Pool</label>
+                </value>
+                <value>
+                    <fullName>Clubhouse</fullName>
+                    <default>false</default>
+                    <label>Clubhouse</label>
+                </value>
+                <value>
+                    <fullName>Fitness Gym</fullName>
+                    <default>false</default>
+                    <label>Fitness Gym</label>
+                </value>
+                <value>
+                    <fullName>Sports &amp; Courts</fullName>
+                    <default>false</default>
+                    <label>Sports &amp; Courts</label>
+                </value>
+                <value>
+                    <fullName>Kids Play Area</fullName>
+                    <default>false</default>
+                    <label>Kids Play Area</label>
+                </value>
+                <value>
+                    <fullName>Landscaped Gardens</fullName>
+                    <default>false</default>
+                    <label>Landscaped Gardens</label>
+                </value>
+                <value>
+                    <fullName>Rooftop Lounge</fullName>
+                    <default>false</default>
+                    <label>Rooftop Lounge</label>
+                </value>
+                <value>
+                    <fullName>EV Charging Bays</fullName>
+                    <default>false</default>
+                    <label>EV Charging Bays</label>
+                </value>
+                <value>
+                    <fullName>24/7 Smart Security</fullName>
+                    <default>false</default>
+                    <label>24/7 Smart Security</label>
+                </value>
+                <value>
+                    <fullName>Co-Working Space</fullName>
+                    <default>false</default>
+                    <label>Co-Working Space</label>
+                </value>
+                <value>
+                    <fullName>Food Court &amp; Cafeteria</fullName>
+                    <default>false</default>
+                    <label>Food Court &amp; Cafeteria</label>
+                </value>
+                <value>
+                    <fullName>Corporate Gym &amp; Wellness</fullName>
+                    <default>false</default>
+                    <label>Corporate Gym &amp; Wellness</label>
+                </value>
+                <value>
+                    <fullName>Conference &amp; Seminar Hall</fullName>
+                    <default>false</default>
+                    <label>Conference &amp; Seminar Hall</label>
+                </value>
+                <value>
+                    <fullName>Convenience Store &amp; ATM</fullName>
+                    <default>false</default>
+                    <label>Convenience Store &amp; ATM</label>
+                </value>
+                <value>
+                    <fullName>Daycare &amp; Creche</fullName>
+                    <default>false</default>
+                    <label>Daycare &amp; Creche</label>
+                </value>
+                <value>
+                    <fullName>High-Speed Destination Lifts</fullName>
+                    <default>false</default>
+                    <label>High-Speed Destination Lifts</label>
+                </value>
+                <value>
+                    <fullName>100% Power Backup</fullName>
+                    <default>false</default>
+                    <label>100% Power Backup</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Display_Order__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Sequence in which the amenity appears on the website (e.g. 1, 2, 3...).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Display order sequence on the project page.</inlineHelpText>
+        <label>Display Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Photo_Content_Key__c</fullName>
+        <description>Salesforce CMS Content Key (e.g. MC_...) or external image URL for this amenity photo.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Salesforce CMS Content Key or image URL for this amenity.</inlineHelpText>
+        <label>Photo Content Key / URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>UrbanNest Footer</masterLabel>
+    <description>Site footer with company overview, navigation, contacts, and statutory RERA notices.</description>
+    <targets>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="customAddress" type="String" label="Override Address" description="Optional: Leave blank to use Custom Metadata value" />
+            <property name="customPhone" type="String" label="Override Phone" description="Optional: Leave blank to use Custom Metadata value" />
+            <property name="customEmail" type="String" label="Override Email" description="Optional: Leave blank to use Custom Metadata value" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

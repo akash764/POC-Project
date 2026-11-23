@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Price_From_Rate</name>
+        <label>Assign Price From Rate</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Price__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_Calculated_Price</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Rate_From_Price</name>
+        <label>Assign Rate From Price</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Base_Rate_Per_SqFt__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Formula_Calculated_Rate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Decision_Calculate_Pricing</name>
+        <label>Calculate Pricing or Rate?</label>
+        <locationX>314</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No Calculation Needed</defaultConnectorLabel>
+        <rules>
+            <name>Should_Calculate_Price</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Formula_Should_Calculate_Price</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Price_From_Rate</targetReference>
+            </connector>
+            <label>Calculate Price from Rate</label>
+        </rules>
+        <rules>
+            <name>Should_Calculate_Rate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Formula_Should_Calculate_Rate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Rate_From_Price</targetReference>
+            </connector>
+            <label>Calculate Rate from Price</label>
+        </rules>
+    </decisions>
+    <description>Automatically calculates Unit Base Price (Price__c) from Base Rate Per Sq.Ft and billable area (Super Built-Up for Apartment/Commercial, Plot/Carpet for Villa), or populates Base Rate Per Sq.Ft if Price is entered directly.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Formula_Calculated_Price</name>
+        <dataType>Currency</dataType>
+        <expression>{!Formula_Effective_Area} * {!$Record.Base_Rate_Per_SqFt__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Formula_Calculated_Rate</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Price__c} / {!Formula_Effective_Area}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Formula_Effective_Area</name>
+        <dataType>Number</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.Plot_Area__c})) &amp;&amp; {!$Record.Plot_Area__c} &gt; 0, {!$Record.Plot_Area__c}, BLANKVALUE({!$Record.Super_Built_Up_Area__c}, BLANKVALUE({!$Record.Carpet_Area__c}, 0)))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Formula_Should_Calculate_Price</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISBLANK({!$Record.Base_Rate_Per_SqFt__c})) &amp;&amp; {!$Record.Base_Rate_Per_SqFt__c} &gt; 0 &amp;&amp; {!Formula_Effective_Area} &gt; 0 &amp;&amp; (ISNEW() || ISBLANK({!$Record.Price__c}) || BLANKVALUE({!$Record.Base_Rate_Per_SqFt__c}, -1) != BLANKVALUE({!$Record__Prior.Base_Rate_Per_SqFt__c}, -1) || BLANKVALUE({!$Record.Super_Built_Up_Area__c}, -1) != BLANKVALUE({!$Record__Prior.Super_Built_Up_Area__c}, -1) || BLANKVALUE({!$Record.Plot_Area__c}, -1) != BLANKVALUE({!$Record__Prior.Plot_Area__c}, -1) || BLANKVALUE({!$Record.Carpet_Area__c}, -1) != BLANKVALUE({!$Record__Prior.Carpet_Area__c}, -1))</expression>
+    </formulas>
+    <formulas>
+        <name>Formula_Should_Calculate_Rate</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISBLANK({!$Record.Price__c})) &amp;&amp; {!$Record.Price__c} &gt; 0 &amp;&amp; {!Formula_Effective_Area} &gt; 0 &amp;&amp; (ISNEW() || ISBLANK({!$Record.Base_Rate_Per_SqFt__c}) || BLANKVALUE({!$Record.Price__c}, -1) != BLANKVALUE({!$Record__Prior.Price__c}, -1))</expression>
+    </formulas>
+    <interviewLabel>Property Unit: Calculate Price &amp; Rate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Property Unit: Calculate Price and Rate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Decision_Calculate_Pricing</targetReference>
+        </connector>
+        <object>Property_Unit__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

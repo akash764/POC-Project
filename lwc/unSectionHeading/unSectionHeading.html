@@ -1,0 +1,16 @@
+<template>
+    <div class={containerClass}>
+        <template if:true={eyebrow}>
+            <span class="un-eyebrow">{eyebrow}</span>
+        </template>
+        <h2 class="un-heading-title">{title}</h2>
+        <div class="un-divider">
+            <span class="un-divider-line"></span>
+            <span class="un-divider-gem">🏛️</span>
+            <span class="un-divider-line"></span>
+        </div>
+        <template if:true={subtitle}>
+            <p class="un-heading-subtitle">{subtitle}</p>
+        </template>
+    </div>
+</template>

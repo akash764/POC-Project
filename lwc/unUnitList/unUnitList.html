@@ -1,0 +1,38 @@
+<template>
+    <div class="un-unit-list-container">
+        <!-- BHK Filter Tabs -->
+        <div class="un-bhk-tabs">
+            <template for:each={bhkTabs} for:item="tab">
+                <button
+                    key={tab.label}
+                    class={tab.cssClass}
+                    onclick={handleTabSelect}
+                    data-bhk={tab.value}>
+                    {tab.label} <span class="un-tab-count">({tab.count})</span>
+                </button>
+            </template>
+        </div>
+
+        <!-- Units Grid -->
+        <template if:true={hasFilteredUnits}>
+            <div class="un-units-grid">
+                <template for:each={filteredUnits} for:item="u">
+                    <c-un-unit-card
+                        key={u.id}
+                        unit={u}
+                        onunitenquire={handleUnitEnquire}>
+                    </c-un-unit-card>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={hasFilteredUnits}>
+            <c-un-empty-state
+                icon="🏡"
+                title="No Units in this Category"
+                description="There are currently no residences configured under this specific BHK selection. Please select another tab."
+                action-label=""
+            ></c-un-empty-state>
+        </template>
+    </div>
+</template>

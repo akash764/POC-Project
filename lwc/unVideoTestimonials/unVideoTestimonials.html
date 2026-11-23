@@ -1,0 +1,87 @@
+<template>
+    <section class="un-video-testimonials-section" aria-label="Customer Video Testimonials">
+        <div class="un-container">
+            <!-- Section Header -->
+            <div class="un-header-row">
+                <div class="un-eyebrow-wrapper">
+                    <span class="un-eyebrow-line"></span>
+                    <span class="un-eyebrow">STORIES OF TRUST &amp; HAPPINESS</span>
+                    <span class="un-eyebrow-line"></span>
+                </div>
+                <h2 class="un-section-title">WHAT OUR VALUABLE CUSTOMERS SAY</h2>
+                <p class="un-section-subtitle">
+                    Real homeowner interviews, walkthrough reflections, and living experiences across our premier developments.
+                </p>
+            </div>
+
+            <!-- Loading State -->
+            <template if:true={isLoading}>
+                <div class="un-loading-spinner-box">
+                    <div class="un-spinner"></div>
+                    <p>Loading customer stories...</p>
+                </div>
+            </template>
+
+            <!-- Video Cards Grid -->
+            <template if:false={isLoading}>
+                <div class="un-video-grid">
+                    <template for:each={videoList} for:item="vid">
+                        <div key={vid.id} class="un-video-card">
+                            <!-- Video Thumbnail / Play Box -->
+                            <div class="un-video-media-box" onclick={handleOpenVideo} data-videoid={vid.videoId} data-title={vid.reviewerName}>
+                                <img src={vid.thumbnailUrl} alt={vid.reviewerName} class="un-video-thumb" loading="lazy" />
+                                <div class="un-video-overlay">
+                                    <button class="un-play-btn" aria-label="Play Customer Video">
+                                        <svg class="un-play-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="un-video-badge-top">
+                                    <span class="un-badge-project">{vid.projectName}</span>
+                                    <span class="un-badge-city">{vid.projectCity}</span>
+                                </div>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="un-video-card-body">
+                                <div class="un-stars-row" aria-label="5 out of 5 stars">
+                                    <span class="un-star">★</span>
+                                    <span class="un-star">★</span>
+                                    <span class="un-star">★</span>
+                                    <span class="un-star">★</span>
+                                    <span class="un-star">★</span>
+                                </div>
+                                <h3 class="un-customer-name">{vid.reviewerName}</h3>
+                                <template if:true={vid.unitPurchased}>
+                                    <p class="un-unit-tag">{vid.unitPurchased}</p>
+                                </template>
+                                <blockquote class="un-customer-quote">
+                                    &ldquo;{vid.feedback}&rdquo;
+                                </blockquote>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+        <!-- Video Player Modal -->
+        <template if:true={activeVideoId}>
+            <div class="un-modal-backdrop" onclick={handleCloseVideo}>
+                <div class="un-modal-dialog" onclick={handleModalClick}>
+                    <button class="un-modal-close-btn" onclick={handleCloseVideo} aria-label="Close Video Player">&times;</button>
+                    <div class="un-video-iframe-container">
+                        <iframe
+                            src={embedUrl}
+                            title={activeVideoTitle}
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </section>
+</template>

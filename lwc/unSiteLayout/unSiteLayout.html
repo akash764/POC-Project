@@ -1,0 +1,34 @@
+<template>
+    <div class="un-site-container">
+        <!-- Persistent Header -->
+        <c-un-header onopenenquiry={handleOpenEnquiry}></c-un-header>
+
+        <!-- Main LWR Page Slot -->
+        <main class="un-site-main" id="main-content">
+            <slot></slot>
+        </main>
+
+        <!-- Persistent Footer -->
+        <c-un-footer></c-un-footer>
+
+        <!-- Global Quick Enquiry Modal Backdrop (Triggerable from anywhere) -->
+        <template if:true={isEnquiryModalOpen}>
+            <div class="un-modal-backdrop" onclick={handleCloseEnquiry}>
+                <div class="un-modal-container" onclick={handleModalClick}>
+                    <button class="un-modal-close" onclick={handleCloseEnquiry} aria-label="Close enquiry modal">
+                        &times;
+                    </button>
+                    <c-un-enquiry-form
+                        is-modal="true"
+                        preselected-project-id={enquiryProjectId}
+                        preselected-project-name={enquiryProjectName}
+                        preselected-bhk={enquiryBhk}
+                        preselected-budget={enquiryBudget}
+                        preselected-unit-number={enquiryUnitNumber}
+                        onsuccess={handleEnquirySuccess}>
+                    </c-un-enquiry-form>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

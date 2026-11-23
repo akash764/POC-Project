@@ -1,0 +1,28 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.un-contact-page {
+    width: 100%;
+}
+
+.un-content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+}
+
+.un-contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3.5rem;
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .un-contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}

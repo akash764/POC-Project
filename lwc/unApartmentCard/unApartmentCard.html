@@ -1,0 +1,33 @@
+<template>
+    <div class={cardClass} onclick={handleCardClick}>
+        <div class="un-apt-header">
+            <span class="un-apt-icon">{phaseIcon}</span>
+            <div>
+                <h4 class="un-apt-name">{apartment.name}</h4>
+                <p class="un-apt-address">{apartment.address}</p>
+            </div>
+            <span class={statusBadgeClass}>{apartment.constructionStatus}</span>
+        </div>
+
+        <div class="un-apt-metrics">
+            <div class="un-metric-box">
+                <span class="un-metric-lbl">{floorLabelHeading}</span>
+                <span class="un-metric-val">{apartment.totalFloors}</span>
+            </div>
+            <div class="un-metric-box">
+                <span class="un-metric-lbl">Total Units</span>
+                <span class="un-metric-val">{apartment.numberOfUnits}</span>
+            </div>
+            <div class="un-metric-box">
+                <span class="un-metric-lbl">Available</span>
+                <span class="un-metric-val highlight">{apartment.availableUnits}</span>
+            </div>
+        </div>
+
+        <div class="un-apt-footer">
+            <span class="un-view-units-link">
+                {selectButtonText} &rarr;
+            </span>
+        </div>
+    </div>
+</template>

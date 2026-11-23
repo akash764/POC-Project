@@ -1,0 +1,254 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.un-enquiry-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px -2px rgba(11, 25, 44, 0.08);
+}
+
+.un-enquiry-card.is-modal {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.un-form-header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.un-form-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0b2545;
+    margin: 0 0 0.5rem;
+}
+
+.un-form-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.un-enquiry-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.un-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.un-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.un-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+}
+
+.required {
+    color: #e11d48;
+}
+
+.un-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #1e293b;
+    background-color: #f8fafc;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.un-input:focus {
+    border-color: #c5a880;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.2);
+}
+
+.un-input.is-invalid {
+    border-color: #e11d48;
+    background-color: #fff1f2;
+}
+
+.un-field-error {
+    font-size: 0.75rem;
+    color: #e11d48;
+    margin-top: 0.35rem;
+    font-weight: 600;
+}
+
+.un-optin-group {
+    background: #f8fafc;
+    padding: 0.85rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.un-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    cursor: pointer;
+}
+
+.un-checkbox {
+    margin-top: 0.25rem;
+    cursor: pointer;
+    accent-color: #0b192c;
+    width: 16px;
+    height: 16px;
+}
+
+.un-optin-text {
+    font-size: 0.82rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.un-server-error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.un-submit-action {
+    margin-top: 0.5rem;
+}
+
+.un-btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #d09b3e 0%, #b8852d 100%);
+    color: #0b2545;
+    border: none;
+    padding: 0.95rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(208, 155, 62, 0.35);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.un-btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(208, 155, 62, 0.5);
+}
+
+.un-btn-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.un-btn-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #0b192c;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: unBtnSpin 0.8s linear infinite;
+    display: inline-block;
+}
+
+@keyframes unBtnSpin {
+    to { transform: rotate(360deg); }
+}
+
+.un-privacy-notice {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    text-align: center;
+    margin: 0.5rem 0 0;
+}
+
+/* Success Confirmation State */
+.un-success-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.un-success-badge {
+    width: 64px;
+    height: 64px;
+    background-color: #059669;
+    color: #ffffff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+}
+
+.un-success-title {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0b192c;
+    margin: 0 0 0.75rem;
+}
+
+.un-success-msg {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 440px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.un-btn-reset-form {
+    background-color: transparent;
+    color: #0b192c;
+    border: 1px solid #cbd5e1;
+    padding: 0.65rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.un-btn-reset-form:hover {
+    border-color: #0b192c;
+    background-color: #0b192c;
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .un-form-row {
+        grid-template-columns: 1fr;
+    }
+    .un-enquiry-card {
+        padding: 1.5rem;
+    }
+}

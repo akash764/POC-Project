@@ -1,0 +1,40 @@
+<template>
+    <div class="un-gallery">
+        <!-- Main Featured Image Display -->
+        <div class="un-gallery-main">
+            <template if:true={activeImageUrl}>
+                <img src={activeImageUrl} alt={activeImageTitle} class="un-gallery-hero-img" onerror={handleActiveImageError} />
+            </template>
+            <template if:false={activeImageUrl}>
+                <div class="un-gallery-placeholder">
+                    <span class="un-gallery-placeholder-icon">🏛️</span>
+                    <span class="un-gallery-placeholder-text">UrbanNest Architectural Visualization</span>
+                </div>
+            </template>
+            <div class="un-gallery-caption">
+                <span class="un-caption-title">{activeImageTitle}</span>
+                <span class="un-caption-tag">{activeImageCategory}</span>
+            </div>
+        </div>
+
+        <!-- Thumbnail Gallery Carousel -->
+        <div class="un-gallery-thumbs">
+            <template for:each={galleryItems} for:item="item">
+                <button
+                    key={item.id}
+                    class={item.thumbClass}
+                    onclick={handleThumbClick}
+                    data-id={item.id}
+                    aria-label={item.title}>
+                    <template if:true={item.url}>
+                        <img src={item.url} alt={item.title} class="un-thumb-img" />
+                    </template>
+                    <template if:false={item.url}>
+                        <div class="un-thumb-placeholder">🏢</div>
+                    </template>
+                    <span class="un-thumb-label">{item.title}</span>
+                </button>
+            </template>
+        </div>
+    </div>
+</template>

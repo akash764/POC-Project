@@ -1,0 +1,45 @@
+<template>
+    <div class="un-search-card">
+        <div class="un-search-form">
+            <!-- 1. State Selector (1st) -->
+            <div class="un-search-field">
+                <label for="state-select" class="un-field-label">
+                    <span class="un-label-icon">📍</span> State
+                </label>
+                <div class="un-select-wrapper">
+                    <select id="state-select" class="un-select" onchange={handleStateChange}>
+                        <option value="">All States</option>
+                        <template for:each={states} for:item="state">
+                            <option key={state} value={state}>{state}</option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 2. City Selector (2nd - Dependent on State) -->
+            <div class="un-search-field">
+                <label for="city-select" class="un-field-label">
+                    <span class="un-label-icon">📍</span> City
+                </label>
+                <div class="un-select-wrapper">
+                    <select id="city-select" class="un-select" onchange={handleCityChange}>
+                        <option value="">All Cities</option>
+                        <template for:each={filteredCities} for:item="city">
+                            <option key={city} value={city}>{city}</option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Actions: Search & Reset -->
+            <div class="un-search-action">
+                <button class="un-btn-search" onclick={handleSearch} aria-label="Search properties">
+                    <span>🔍</span> Search
+                </button>
+                <button class="un-btn-reset" onclick={handleReset} aria-label="Reset search filters">
+                    <span>🔄</span> Reset
+                </button>
+            </div>
+        </div>
+    </div>
+</template>
